@@ -7,6 +7,14 @@ use App\Consultant;
 use CRUDBooster; 
 class ConsultantController extends Controller
 {
+    public function __construct()
+    {
+      // $this->middleware('myauth');
+
+          $this->middleware('myauth')->only('enrollment');
+
+     //   $this->middleware('myauth')->except('myauth');
+    }
     //
     public function create(){
       //  dd('test');

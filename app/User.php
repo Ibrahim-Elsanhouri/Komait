@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use App\Instructor; 
 class User extends Authenticatable
 {
     use Notifiable;
@@ -42,10 +42,18 @@ class User extends Authenticatable
     public function verifyUser(){
         return $this->hasOne('App\UserVerify' , 'cms_users_id'); 
     }
+    public function instructor(){
+        return $this->hasOne('App\Instructor' , 'cms_users_id'); 
+    }
     public function consultants(){
         return $this->hasMany('App\Consultant');
     }
     public function notes(){
         return $this->hasMany('App\Note');
     }
+    public function courses(){
+        return $this->belongsToMany('App\Course', 'enrollments', 'cms_users_id', 'courses_id');
+    }
+
+
 }

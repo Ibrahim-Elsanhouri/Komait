@@ -14,7 +14,7 @@
                     <div class="breadcrumb_iner text-center">
                         <div class="breadcrumb_iner_item">
                             <h2>استشاراتي</h2>
-                            <p>حسابي<span>/<span>استشاراتي</p>
+                            <p>حسابي<span>/<span><a href="/myconsultants">استشاراتي</a></p>
                         </div>
                     </div>
                 </div>
@@ -62,6 +62,11 @@
 
       
       </th>
+       <th scope="col">
+                <div class="text-center">الاتفاقية  </div>
+
+      
+      </th>
 
             <th scope="col"> 
                       <div class="text-center">تاريخ التقديم</div>
@@ -99,6 +104,14 @@
       </div>
       
       </td>
+       <td>
+      <div class="text-center">
+     @if  ($myconsultant->contract->id)  
+        <a href="{{ route('contract.show' , $myconsultant->contract->id) }}" target="_blank"> <i class="fa fa-money"></i><span> العقود </span></a>
+      @endif
+      </div>
+      
+      </td>
             <td scope="col">
                   <div class="text-center">
                   {{ $myconsultant->created_at->diffForHumans() }}
@@ -109,18 +122,9 @@
 
      <td scope="col">
                   <div class="text-center">
-                  @if($myconsultant->status == 0)
-                  ⏳ جاري تدقيق الملفات
-                  @elseif ($myconsultant->status == 1)
-                  💰 تم ارسال العرض
-                  @elseif ($myconsultant->status == 2)
-  ✍ تم قبول العرض - في انتظار توقيع الاتفاقية الالكترونية
-                  @elseif ($myconsultant->status == 3)
-جاري التنفيذ  👷 
-             @else 
-                          👍  تم التنفيذ 
-
-@endif
+                  
+                  {{ $myconsultant->hala->name }}
+                  
 
 
                   </div>

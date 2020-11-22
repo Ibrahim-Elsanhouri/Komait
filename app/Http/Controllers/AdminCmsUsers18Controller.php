@@ -34,8 +34,6 @@
 			$this->col[] = ["label"=>"البريد الالكتروني","name"=>"email"];
 			$this->col[] = ["label"=>"الجوال","name"=>"mobile"];
 			$this->col[] = ["label"=>"التفعيل","name"=>"verified"];
-
-
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE

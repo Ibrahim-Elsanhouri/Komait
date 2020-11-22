@@ -33,6 +33,8 @@
 			$this->col[] = ["label"=>"الاستشارة","name"=>"subject"];
 			$this->col[] = ["label"=>"العميل","name"=>"cms_users_id","join"=>"cms_users,name"];
 			$this->col[] = ["label"=>"نوع الاستشارة","name"=>"types_id","join"=>"types,name"];
+			$this->col[] = ["label"=>"الحالة","name"=>"halas_id","join"=>"halas,name"];
+
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -40,23 +42,23 @@
 			$this->form[] = ['label'=>'الاستشارة','name'=>'subject','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'تفاصيل الاستشارة','name'=>'details','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'ملف الاستشارة','name'=>'file','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'العميل','name'=>'cms_users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'cms_users,name'];
 			$this->form[] = ['label'=>'نوع الاستشارة','name'=>'types_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'types,name'];
 			$this->form[] = ['label'=>'هل يوجد ترخيص تجاري','name'=>'licences','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'هل يوجد دراسة جدوى','name'=>'study','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'هل يوجد مستندات','name'=>'docs','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'المستشار','name'=>'consultanters_id','type'=>'select2','validation'=>'required','width'=>'col-sm-9','datatable'=>'cms_users,name'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ["label"=>"Subject","name"=>"subject","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Details","name"=>"details","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
-			//$this->form[] = ["label"=>"File","name"=>"file","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Cms Users Id","name"=>"cms_users_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"cms_users,name"];
-			//$this->form[] = ["label"=>"Types Id","name"=>"types_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"types,name"];
-			//$this->form[] = ["label"=>"Licences","name"=>"licences","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Study","name"=>"study","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Docs","name"=>"docs","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ['label'=>'الاستشارة','name'=>'subject','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'تفاصيل الاستشارة','name'=>'details','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'ملف الاستشارة','name'=>'file','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'نوع الاستشارة','name'=>'types_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'types,name'];
+			//$this->form[] = ['label'=>'هل يوجد ترخيص تجاري','name'=>'licences','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'هل يوجد دراسة جدوى','name'=>'study','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'هل يوجد مستندات','name'=>'docs','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'المستشار','name'=>'consultanters_id','type'=>'select2','validation'=>'required','width'=>'col-sm-9','datatable'=>'cms_users,name'];
 			# OLD END FORM
 
 			/* 

@@ -32,7 +32,9 @@
 			$this->col = [];
 			$this->col[] = ["label"=>"تكلفة الاستشارة","name"=>"cost"];
 			$this->col[] = ["label"=>"مدة التنفيذ","name"=>"period"];
-			$this->col[] = ["label"=>"تفاصيل العرض","name"=>"details"];
+			$this->col[] = ["label"=>"الادارة","name"=>"approved"];
+			$this->col[] = ["label"=>"العميل","name"=>"status"];
+
 			$this->col[] = ["label"=>"الاستشارة","name"=>"consultants_id","join"=>"consultants,id"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
@@ -41,15 +43,16 @@
 			$this->form[] = ['label'=>'تكلفة الاستشارة','name'=>'cost','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'مدة التنفيذ','name'=>'period','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'تفاصيل العرض','name'=>'details','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
+
 			$this->form[] = ['label'=>'الاستشارة','name'=>'consultants_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'consultants,id'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ["label"=>"Cost","name"=>"cost","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			//$this->form[] = ["label"=>"Period","name"=>"period","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			//$this->form[] = ["label"=>"Details","name"=>"details","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
-			//$this->form[] = ["label"=>"Consultants Id","name"=>"consultants_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"consultants,id"];
+			//$this->form[] = ['label'=>'تكلفة الاستشارة','name'=>'cost','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'مدة التنفيذ','name'=>'period','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'تفاصيل العرض','name'=>'details','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'الاستشارة','name'=>'consultants_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'consultants,id'];
 			# OLD END FORM
 
 			/* 
@@ -78,7 +81,12 @@
 	        | @showIf 	   = If condition when action show. Use field alias. e.g : [id] == 1
 	        | 
 	        */
-	        $this->addaction = array();
+			$this->addaction = array();
+			$this->addaction[] = ['label'=>'تفعيل العرض','url'=>CRUDBooster::mainpath('set-approved/1/[id]'),'icon'=>'fa fa-check','color'=>'primary','showIf'=>"[approved] == '0'"];
+			$this->addaction[] = ['label'=>'تم تفعيل العرض','icon'=>'fa fa-thumbs-up','color'=>'success','showIf'=>"[approved] == '1'"];
+
+			$this->addaction[] = ['label'=>'العرض في الانتظار','url'=>CRUDBooster::mainpath('set-approved/1/[id]'),'icon'=>'fa fa-clock-o','color'=>'warning','showIf'=>"[status] == '0'"];
+			$this->addaction[] = ['label'=>'تم قبول العرض','url'=>CRUDBooster::mainpath('set-approved/1/[id]'),'icon'=>'fa fa-money','color'=>'success','showIf'=>"[status] == '1'"];
 
 
 	        /* 
@@ -259,6 +267,7 @@
 	    */
 	    public function hook_before_add(&$postdata) {        
 	        //Your code here
+			$postdata['cms_users_id'] = CRUDBooster::myId();
 
 	    }
 
@@ -275,7 +284,7 @@
 $consultants_id = DB::table('offers')->where('id', $id)->value('consultants_id');
 $affected = DB::table('consultants')
               ->where('id', $consultants_id )
-              ->update(['status' => 1]);
+              ->update(['halas_id' => 1]);
 	    }
 
 	    /* 
@@ -327,7 +336,14 @@ $affected = DB::table('consultants')
 
 	    }
 
+		public function getSetApproved($approved,$id) {
+			DB::table('offers')->where('id',$id)->update(['approved'=>$approved]);
+			$consultants_id = DB::table('offers')->where('id',$id)->value('consultants_id');
+			DB::table('consultants')->where('id',$consultants_id)->update(['halas_id'=> 2]);
 
+			//This will redirect back and gives a message
+			CRUDBooster::redirect($_SERVER['HTTP_REFERER'],"تم تفعيل العرض للعميل","info");
+		 }
 
 	    //By the way, you can still create your own method in here... :) 
 

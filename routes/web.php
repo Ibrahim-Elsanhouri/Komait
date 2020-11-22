@@ -36,3 +36,38 @@ Route::get('/consultant_offers/{id}' , 'OfferController@consultant_offers')->nam
 Route::get('/offers_accepted/{id}' , 'OfferController@offer_accepted')->name('offer.accepted'); 
 
 //offer.accepted
+
+
+
+/// Contract 
+Route::post('/contract' , 'ContractController@store')->name('contract.store'); 
+Route::get('/contract/{id}' , 'ContractController@show')->name('contract.show'); 
+// confirmed
+Route::get('/contract/confirmed/{id}' , 'ContractController@confirmed')->name('contract.confirmed'); 
+
+//paylink 
+
+Route::post('/check/{id}' , 'PaylinkController@post_login')->name('paylink.token'); 
+Route::post('/check-course/{id}' , 'PaylinkController@post_login')->name('paylink.course.token'); 
+Route::post('/pay' , 'PaylinkController@create_invoice')->name('paylink.invoice'); 
+Route::post('/pay-course' , 'PaylinkController@create_course_invoice')->name('paylink.course.invoice'); 
+
+
+// Courses 
+Route::get('/courses' , 'CourseController@index')->name('course.index'); 
+Route::get('/courses/{id}' , 'CourseController@show')->name('course.show');
+Route::get('/enrollment/{id}' , 'CourseController@enrollment')->name('course.enrollment');
+
+// lessons
+Route::get('/lessons/{id}' , 'LessonController@show')->name('lesson.show'); 
+//Route::get('/lesson_complete' , 'LessonController@lesson_complete')->name('lesson.complete'); 
+//enrollment
+
+// Become Instructor 
+Route::get('/instructor' , 'InstructorController@index')->name('instructor.index'); 
+Route::get('/become-instructor' , 'InstructorController@create')->name('instructor.create'); 
+Route::post('/become-instructor' , 'InstructorController@store')->name('instructor.store'); 
+
+
+// Enrollment
+Route::post('/enrollment' , 'EnrollmentController@store')->name('enrollment.store'); 

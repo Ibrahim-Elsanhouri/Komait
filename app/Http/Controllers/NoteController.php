@@ -7,6 +7,14 @@ use App\Note;
 class NoteController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('myauth');
+
+      //    $this->middleware('log')->only('index');
+
+       // $this->middleware('subscribed')->except('store');
+    }
     public function consultant_notes($id){
         $notes = Note::where('consultants_id' , $id)->get();
         $consultants_id = $id; 

@@ -7,8 +7,16 @@ use App\Offer;
 class OfferController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('myauth');
+
+      //    $this->middleware('log')->only('index');
+
+       // $this->middleware('subscribed')->except('store');
+    }
     public function consultant_offers($id){
-        $offers = Offer::where('consultants_id' , $id)->get();
+        $offers = Offer::where('consultants_id' , $id)->approved()->get();
      //   $consultants_id = $id; 
         return view('offers.index' , compact('offers')); 
     }
@@ -20,7 +28,7 @@ class OfferController extends Controller
         $offer->save(); 
 
         $consultant = $offer->consultant; 
-        $consultant->status = 2; 
+        $consultant->halas_id = 3; 
         $consultant->save();
 
      //   $consultants_id = $id; 

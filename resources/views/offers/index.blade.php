@@ -69,6 +69,7 @@
                       <div class="text-center">اتفاقية العمل</div>
 
             </th>
+            
     </tr>
   </thead>
   <tbody>
@@ -110,9 +111,11 @@
 
             
             </td>
-@if($offer->status == 1)
+            
 
            <td scope="col">
+           @if($offer->status == 1 &&  $offer->consultant->status = 3 )
+
                   <div class="text-center">
 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
 انشاء اتفاقية عمل 
@@ -148,13 +151,23 @@
 بتاكيدك للطب تعتبر موافقا على العرض , و لن تفعل الاتفاقية الا بعد اتمام السداد 
 كما يمكنك الاطلاع على بنود الاتفاقية و تحميلها قبل السداد
 
+
+<form action="{{ route('contract.store') }}" method="post">
+@csrf
+<input name="offers_id" type="hidden" value="{{ $offer->id }}"/>
+<input  name="cms_users_id" type="hidden" value="{{ CRUDBooster::myId() }}"/>
+<input  name="consultants_id" type="hidden" value="{{ $offer->consultant->id }}"/>
+
+
+
       </div>
       
       </h4>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 
-        <button type="button" class="btn btn-primary">تأكيد التوقيع</button>
+        <button type="submit" class="btn btn-primary">تأكيد التوقيع</button>
+</form>
 
       </div>
     </div>
@@ -166,13 +179,17 @@
 
 
 
+@endif
 
 
 
             </td>
-@endif
+
+<td>
 
 
+
+</td>
 
 
 

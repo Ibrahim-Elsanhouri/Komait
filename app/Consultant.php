@@ -13,10 +13,17 @@ class Consultant extends Model
     public function type(){
         return $this->belongsTo('App\Type' , 'types_id');
     }
+    public function hala(){
+        return $this->belongsTo('App\Hala' , 'halas_id');
+    }
+
     public function notes(){
         return $this->hasMany('App\Note' , 'consultants_id');
     }
     public function offers(){
         return $this->hasMany('App\Offer' , 'consultants_id');
+    }
+    public function contract(){
+        return $this->hasOne('App\Contract' , 'consultants_id'); 
     }
 }

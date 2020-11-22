@@ -33,8 +33,8 @@
           <div class="row align-items-center">
               <div class="col-lg-12">
                   <nav class="navbar navbar-expand-lg navbar-light">
-                      <a class="navbar-brand logo_1" href="/"> <img src="{{ asset('img/single_page_logo.png') }}" alt="logo"> </a>
-                      <a class="navbar-brand logo_2" href="/"> <img src="{{ asset('img/logo.png') }}" alt="logo"> </a>
+                      <a class="navbar-brand logo_1" href="/"> <img width="400" height="80" src="{{ asset('img/main-logo.png') }}" alt="logo"> </a>
+                      <a class="navbar-brand logo_2" href="/"> <img src="{{ asset('img/main-logo.png') }}" alt="logo"> </a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse"
                           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                           aria-expanded="false" aria-label="Toggle navigation">
@@ -47,15 +47,11 @@
                             <li class="nav-item active">
                                 <a class="nav-link" href="/">الرئيسية</a>
                             </li>
+                       
                             <li class="nav-item">
-                                <a class="nav-link" href="#">عن المنصة</a>
+                                <a class="nav-link" href="/courses">الدورات </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">الدورات </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">المدونة</a>
-                            </li>
+                      
                    
                            <li class="nav-item">
                                 <a class="nav-link" href="/contact">تواصل معنا</a>
@@ -67,15 +63,29 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/myconsultants">استشاراتي</a>
-                                    <a class="dropdown-item" href="#">التصاميم</a>
-                                    <a class="dropdown-item" href="#">تصميم تفاصيل الدورة</a>
+                                    <a class="dropdown-item" href="#">دوراتي</a>
+
 
                                 </div>
                             </li>
+                            @else 
+              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    دخول الحساب
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/login">تسجيل دخول</a>
+                                    <a class="dropdown-item" href="/register">تسجيل جديد</a>
+
+
+                                </div>
+                            </li>
+
+
                             @endif
  
                             <li class="d-none d-lg-block">
-                                <a class="btn_1" href="#">Get a Quote</a>
+                                <a class="btn_1" href="/become-instructor">كن معلما</a>
                             </li>
 
                         </ul>
@@ -94,7 +104,7 @@
           <div class="row justify-content-between">
               <div class="col-sm-6 col-md-4 col-xl-3">
                   <div class="single-footer-widget footer_1">
-                      <a href="index.html"> <img src="img/main-logo.png" alt=""> </a>
+                      <a href="#"> <img src="{{ asset('img/main-logo.png') }}" alt=""> </a>
                       <p>But when shot real her. Chamber her one visite removal six
                           sending himself boys scot exquisite existend an </p>
                       <p>But when shot real her hamber her </p>
@@ -127,11 +137,11 @@
               </div>
               <div class="col-xl-3 col-sm-6 col-md-4">
                   <div class="single-footer-widget footer_2">
-                      <h4>Contact us</h4>
+                      <h4>تواصل معنا</h4>
                       <div class="contact_info">
-                          <p><span> Address :</span> Hath of it fly signs bear be one blessed after </p>
-                          <p><span> Phone :</span> +2 36 265 (8060)</p>
-                          <p><span> Email : </span>info@colorlib.com </p>
+                          <p><span> العنوان :</span> Hath of it fly signs bear be one blessed after </p>
+                          <p><span> الهاتف :</span> +2 36 265 (8060)</p>
+                          <p><span> البريد الالكتروني : </span>info@colorlib.com </p>
                       </div>
                   </div>
               </div>

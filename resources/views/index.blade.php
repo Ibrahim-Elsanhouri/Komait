@@ -45,33 +45,44 @@
                                 <li class="nav-item active">
                                     <a class="nav-link" href="/">الرئيسية</a>
                                 </li>
+                      
+                              
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">عن المنصة</a>
+                                    <a class="nav-link" href="/courses">الدورات </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">الدورات </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">المدونة</a>
-                                </li>
-     @if(CRUDBooster::myId())
+                              
+         @if(CRUDBooster::myId())
                                      <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     حسابي
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/myconsultants">استشاراتي</a>
-                                    <a class="dropdown-item" href="#">التصاميم</a>
-                                    <a class="dropdown-item" href="#">تصميم تفاصيل الدورة</a>
+                                    <a class="dropdown-item" href="#">دوراتي</a>
+
 
                                 </div>
                             </li>
+                            @else 
+              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    دخول الحساب
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/login">تسجيل دخول</a>
+                                    <a class="dropdown-item" href="/register">تسجيل جديد</a>
+
+
+                                </div>
+                            </li>
+
+
                             @endif
                                 <li class="nav-item">
                                     <a class="nav-link" href="/contact">تواصل معنا</a>
                                 </li>
                                 <li class="d-none d-lg-block">
-                                    <a class="btn_1" href="#">كن معلما</a>
+                                    <a class="btn_1" href="/become-instructor">كن معلما</a>
                                 </li>
                             </ul>
                         </div>
@@ -94,7 +105,7 @@
                             <p>
                             اكمل جميع عملياتك الاستشارية و انصم لنا في المحتوى التدريبي 
                             </p>
-                            <a href="#" class="btn_1">عرض الدورات</a>
+                            <a href="/courses" class="btn_1">عرض الدورات</a>
                             <a href="/consultant" class="btn_2">طلب استشارة</a>
                         </div>
                     </div>
@@ -112,7 +123,7 @@
                     <div class="single_feature_text ">
                         <h2>انصم لنا <br> كمدرب</h2>
                         <p>نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي   </p>
-                        <a href="#" class="btn_1">Read More</a>
+                        <a href="/become-instructor" class="btn_1">طلب الانضمام</a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-xl-3">
@@ -168,7 +179,7 @@
                           تعلم بشكل يدوي 
                         
                         </h2>
-                        <p>منصة قدرات سيتي منصة عربية تهتم بالمحتوى الفني و التقني</p>
+                        <p>منصة  كميت منصة عربية تهتم بالمحتوى الفني و التقني</p>
                         <ul>
                             <li><span class="ti-pencil-alt"></span>Him lights given i heaven second yielding seas
                                 gathered wear</li>
@@ -189,25 +200,25 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        <span class="counter">1024</span>
+                        <span class="counter">{{ App\User::where('id_cms_privileges', 2)->count() }}</span>
                         <h4>مدربي المنصة </h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        <span class="counter">960</span>
-                        <h4>طلاب المنصة</h4>
+                        <span class="counter">{{ App\User::count() }}</span>
+                        <h4>عملاء المنصة</h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        <span class="counter">1020</span>
+                        <span class="counter">{{ App\Course::count() }}</span>
                         <h4>عدد الدورات </h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        <span class="counter">820</span>
+                        <span class="counter">{{ App\Lesson::count() }}</span>
                         <h4>عدد الدروس</h4>
                     </div>
                 </div>
@@ -217,114 +228,7 @@
     <!-- member_counter counter end -->
 
     <!--::review_part start::-->
-    <section class="special_cource padding_top">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-5">
-                    <div class="section_tittle text-center">
-                        <p>احدث الدورات </p>
-                        <h2>احدث الدورات </h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="single_special_cource">
-                        <img src="img/special_cource_1.png" class="special_img" alt="">
-                        <div class="special_cource_text">
-                            <a href="course-details.html" class="btn_4">تقني </a>
-                            <h4> ريال سعودي  130.00</h4>
-                            <a href="course-details.html"><h3>تعلم الفوتوشو</h3></a>
-                            <p>احترف الفوتوشوب</p>
-                            <div class="author_info">
-                                <div class="author_img">
-                                    <img src="img/author/author_1.png" alt="">
-                                    <div class="author_info_text">
-                                        <p>المدرب</p>
-                                        <h5><a href="#">سارة مهدي </a></h5>
-                                    </div>
-                                </div>
-                                <div class="author_rating">
-                                    <div class="rating">
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/star.svg" alt=""></a>
-                                    </div>
-                                    <p>3.8 التقييم</p>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="single_special_cource">
-                        <img src="img/special_cource_2.png" class="special_img" alt="">
-                        <div class="special_cource_text">
-                            <a href="course-details.html" class="btn_4">التصميم</a>
-                            <h4>$160.00</h4>
-                            <a href="course-details.html"> <h3>تصميم الويب </h3></a>
-                            <p>تصميم الويب و الصفحات</p>
-                            <div class="author_info">
-                                <div class="author_img">
-                                    <img src="img/author/author_2.png" alt="">
-                                    <div class="author_info_text">
-                                        <p>المدرب</p>
-                                        <h5><a href="#">ابراهيم السنهوري</a></h5>
-                                    </div>
-                                </div>
-                                <div class="author_rating">
-                                    <div class="rating">
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/star.svg" alt=""></a>
-                                    </div>
-                                    <p>3.8 Ratings</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="single_special_cource">
-                        <img src="img/special_cource_3.png" class="special_img" alt="">
-                        <div class="special_cource_text">
-                            <a href="course-details.html" class="btn_4">الريزن</a>
-                            <h4>$140.00</h4>
-                            <a href="course-details.html">  <h3>دورة فن الريزن</h3> </a> 
-                            <p>دورة فن الريز دورة فن الريز دورة فن الريز</p>
-                            <div class="author_info">
-                                <div class="author_img">
-                                    <img src="img/author/author_3.png" alt="">
-                                    <div class="author_info_text">
-                                        <p>Conduct by:</p>
-                                        <h5><a href="#">James Well</a></h5>
-                                    </div>
-                                </div>
-                                <div class="author_rating">
-                                    <div class="rating">
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/star.svg" alt=""></a>
-                                    </div>
-                                    <p>3.8 Ratings</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--::blog_part end::-->
 
     <!-- learning part start-->
     <section class="advance_feature learning_part">
@@ -367,199 +271,13 @@
             </div>
         </div>
     </section>
-    <!-- learning part end-->
+    
+    
+    
+    learning part end-->
 
     <!--::review_part start::-->
-    <section class="testimonial_part">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-xl-5">
-                    <div class="section_tittle text-center">
-                        <p>العملاء</p>
-                        <h2>اراء الطلاب</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="textimonial_iner owl-carousel">
-                        <div class="testimonial_slider">
-                            <div class="row">
-                                <div class="col-lg-8 col-xl-4 col-sm-8 align-self-center">
-                                    <div class="testimonial_slider_text">
-                                        <p>ماشاء الله تبارك الله ابداع المحتوى الموجود في المنصة</p>
-                                        <h4>محمد خالد </h4>
-                                        <h5> مطور برامج</h5>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-2 col-sm-4">
-                                    <div class="testimonial_slider_img">
-                                        <img src="img/testimonial_img_1.png" alt="#">
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 d-none d-xl-block">
-                                    <div class="testimonial_slider_text">
-                                        <p>Behold place was a multiply creeping creature his domin to thiren open void
-                                            hath herb divided divide creepeth living shall i call beginning
-                                            third sea itself set</p>
-                                        <h4>Michel Hashale</h4>
-                                        <h5> Sr. Web designer</h5>
-                                    </div>
-                                </div>
-                                <div class="col-xl-2 d-none d-xl-block">
-                                    <div class="testimonial_slider_img">
-                                        <img src="img/testimonial_img_1.png" alt="#">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial_slider">
-                            <div class="row">
-                                <div class="col-lg-8 col-xl-4 col-sm-8 align-self-center">
-                                    <div class="testimonial_slider_text">
-                                        <p>Behold place was a multiply creeping creature his domin to thiren open void
-                                            hath herb divided divide creepeth living shall i call beginning
-                                            third sea itself set</p>
-                                        <h4>Michel Hashale</h4>
-                                        <h5> Sr. Web designer</h5>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-2 col-sm-4">
-                                    <div class="testimonial_slider_img">
-                                        <img src="img/testimonial_img_2.png" alt="#">
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 d-none d-xl-block">
-                                    <div class="testimonial_slider_text">
-                                        <p>Behold place was a multiply creeping creature his domin to thiren open void
-                                            hath herb divided divide creepeth living shall i call beginning
-                                            third sea itself set</p>
-                                        <h4>Michel Hashale</h4>
-                                        <h5> Sr. Web designer</h5>
-                                    </div>
-                                </div>
-                                <div class="col-xl-2 d-none d-xl-block">
-                                    <div class="testimonial_slider_img">
-                                        <img src="img/testimonial_img_1.png" alt="#">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial_slider">
-                            <div class="row">
-                                <div class="col-lg-8 col-xl-4 col-sm-8 align-self-center">
-                                    <div class="testimonial_slider_text">
-                                        <p>Behold place was a multiply creeping creature his domin to thiren open void
-                                            hath herb divided divide creepeth living shall i call beginning
-                                            third sea itself set</p>
-                                        <h4>Michel Hashale</h4>
-                                        <h5> Sr. Web designer</h5>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-xl-2 col-sm-4">
-                                    <div class="testimonial_slider_img">
-                                        <img src="img/testimonial_img_3.png" alt="#">
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 d-none d-xl-block">
-                                    <div class="testimonial_slider_text">
-                                        <p>Behold place was a multiply creeping creature his domin to thiren open void
-                                            hath herb divided divide creepeth living shall i call beginning
-                                            third sea itself set</p>
-                                        <h4>Michel Hashale</h4>
-                                        <h5> Sr. Web designer</h5>
-                                    </div>
-                                </div>
-                                <div class="col-xl-2 d-none d-xl-block">
-                                    <div class="testimonial_slider_img">
-                                        <img src="img/testimonial_img_1.png" alt="#">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!--::blog_part end::-->
-
-    <!--::blog_part start::
-    <section class="blog_part section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-5">
-                    <div class="section_tittle text-center">
-                        <p>Our Blog</p>
-                        <h2>Students Blog</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-lg-4 col-xl-4">
-                    <div class="single-home-blog">
-                        <div class="card">
-                            <img src="img/blog/blog_1.png" class="card-img-top" alt="blog">
-                            <div class="card-body">
-                                <a href="#" class="btn_4">Design</a>
-                                <a href="blog.html">
-                                    <h5 class="card-title">Dry beginning sea over tree</h5>
-                                </a>
-                                <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
-                                <ul>
-                                    <li> <span class="ti-comments"></span>2 Comments</li>
-                                    <li> <span class="ti-heart"></span>2k Like</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-4">
-                    <div class="single-home-blog">
-                        <div class="card">
-                            <img src="img/blog/blog_2.png" class="card-img-top" alt="blog">
-                            <div class="card-body">
-                                <a href="#" class="btn_4">Developing</a>
-                                <a href="blog.html">
-                                    <h5 class="card-title">All beginning air two likeness</h5>
-                                </a>
-                                <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
-                                <ul>
-                                    <li> <span class="ti-comments"></span>2 Comments</li>
-                                    <li> <span class="ti-heart"></span>2k Like</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-4">
-                    <div class="single-home-blog">
-                        <div class="card">
-                            <img src="img/blog/blog_3.png" class="card-img-top" alt="blog">
-                            <div class="card-body">
-                                <a href="#" class="btn_4">Design</a>
-                                <a href="blog.html">
-                                    <h5 class="card-title">Form day seasons sea hand</h5>
-                                </a>
-                                <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
-                                <ul>
-                                    <li> <span class="ti-comments"></span>2 Comments</li>
-                                    <li> <span class="ti-heart"></span>2k Like</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    
-    
-    -->
-    
-    <!--::blog_part end::-->
+   
 
     <!-- footer part start-->
     <footer class="footer-area" style="direction: rtl;">
