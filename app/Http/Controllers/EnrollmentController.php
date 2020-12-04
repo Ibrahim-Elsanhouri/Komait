@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Enrollment; 
+use CRUDBooster;
 class EnrollmentController extends Controller
 {
     //
@@ -11,4 +12,5 @@ class EnrollmentController extends Controller
         Enrollment::create($request->all()); 
         return back()->with('primary' , 'اختيار رائع , تم انضمامك للدورة'); 
     }
+   
 }

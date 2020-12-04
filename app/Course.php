@@ -25,8 +25,8 @@ class Course extends Model
     return $this->belongsToMany('App\User', 'enrollments', 'courses_id', 'cms_users_id');
 
 }
-public function is_enrollment(){
-    return Enrollment::where('cms_users_id' , CRUDBooster::myId())->where('courses_id' ,  $this->id)->count(); 
-}
+//public function is_enrollment(){
+  //  return Enrollment::where('cms_users_id' , CRUDBooster::myId())->where('courses_id' ,  $this->id)->count(); 
+//}
 
 }

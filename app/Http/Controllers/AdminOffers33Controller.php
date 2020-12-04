@@ -4,9 +4,12 @@
 	use Request;
 	use DB;
 	use CRUDBooster;
+	use App\Notifications\Message; 
 
 	class AdminOffers33Controller extends \crocodicstudio\crudbooster\controllers\CBController {
 
+
+		use Message; 
 	    public function cbInit() {
 
 			# START CONFIGURATION DO NOT REMOVE THIS LINE
@@ -301,7 +304,8 @@
 	    | 
 	    */
 	    public function hook_after_edit($id) {
-	        //Your code here 
+			//Your code here 
+			$this->admin_new_offer();
 
 	    }
 

@@ -63,7 +63,7 @@
                             @foreach ( $course->lessons as $lesson )
                                         <li class="justify-content-between align-items-center d-flex">
                                     <p>{{ $lesson->name }}</p>
-                                @if ($course->is_enrollment() == 1 && $course->price != 0)
+                                @if ($course->users->contains(CRUDBooster::myId()) )
 
                                     <a class="btn_2 text-uppercase" href="{{ route('lesson.show' , $lesson->id ) }}">عرض الدرس</a>
                              
@@ -99,7 +99,7 @@
                          
 
                         </ul>
-                       @if (($course->is_enrollment() == 0)  )
+                       @if ($course->users->contains(CRUDBooster::myId()))
                        <form method="post" action="{{  route('enrollment.store') }}">
                        @csrf
                        <input type="hidden" name="cms_users_id" value="{{ CRUDBooster::myId() }}"/> 

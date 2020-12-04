@@ -34,15 +34,16 @@
               <div class="col-lg-12">
                   <nav class="navbar navbar-expand-lg navbar-light">
                       <a class="navbar-brand logo_1" href="/"> <img width="400" height="80" src="{{ asset('img/main-logo.png') }}" alt="logo"> </a>
-                      <a class="navbar-brand logo_2" href="/"> <img src="{{ asset('img/main-logo.png') }}" alt="logo"> </a>
+                      <a class="navbar-brand logo_2" href="/"> <img width="400" height="80" src="{{ asset('img/main-logo.png') }}" alt="logo"> </a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse"
                           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                           aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                       </button>
 
-                      <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                     <div class="collapse navbar-collapse main-menu-item justify-content-end"
                           id="navbarSupportedContent">
+                          
                           <ul class="navbar-nav align-items-center">
                             <li class="nav-item active">
                                 <a class="nav-link" href="/">الرئيسية</a>
@@ -63,7 +64,11 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/myconsultants">استشاراتي</a>
-                                    <a class="dropdown-item" href="#">دوراتي</a>
+                                    <a class="dropdown-item" href="/myenrollments">دوراتي</a>
+    <a class="dropdown-item" href="/notifications"> ({{ CRUDBooster::myNotifications() }})الاشعارات </a>
+
+                                    <a class="dropdown-item" href="/profile">معلومات الحساب</a>
+                                    <a class="dropdown-item" href="/admin/logout ">تسجيل خروج</a>
 
 
                                 </div>

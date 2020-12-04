@@ -24,6 +24,10 @@ Route::post('/contact' , 'ContactController@store')->name('contact.store');
 Route::get('/register' , 'UserController@getRegister'); 
 Route::post('/register' , 'UserController@postRegister')->name('user.register');
 //verifyEmail
+
+Route::get('/profile' , 'UserController@profile')->name('user.profile'); 
+Route::get('/notifications' , 'NotificationController@index'); 
+
 Route::get('/verifyEmail/{token}' , 'UserController@verifyEmail')->name('user.verify'); 
 
 Route::get('/consultant' , 'ConsultantController@create')->name('consultant.create'); 
@@ -70,4 +74,7 @@ Route::post('/become-instructor' , 'InstructorController@store')->name('instruct
 
 
 // Enrollment
+Route::get('/myenrollments ','UserController@myenrollments');
+
+
 Route::post('/enrollment' , 'EnrollmentController@store')->name('enrollment.store'); 

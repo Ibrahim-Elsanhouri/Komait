@@ -4,11 +4,12 @@
 	use Request;
 	use DB;
 	use CRUDBooster;
+	use App\Notifications\Message; 
 
 	class AdminOffersController extends \crocodicstudio\crudbooster\controllers\CBController {
-
+use Message; 
 	    public function cbInit() {
-
+//client_receive_offer($id)
 			# START CONFIGURATION DO NOT REMOVE THIS LINE
 			$this->title_field = "id";
 			$this->limit = "20";
@@ -284,7 +285,10 @@
 $consultants_id = DB::table('offers')->where('id', $id)->value('consultants_id');
 $affected = DB::table('consultants')
               ->where('id', $consultants_id )
-              ->update(['halas_id' => 1]);
+			  ->update(['halas_id' => 1]);
+			  $cms_users_id = DB::table('consultants')->where('id', $consultants_id)->value('cms_users_id');
+		$this->client_receive_offer($cms_users_id);	  
+			  
 	    }
 
 	    /* 
@@ -340,7 +344,7 @@ $affected = DB::table('consultants')
 			DB::table('offers')->where('id',$id)->update(['approved'=>$approved]);
 			$consultants_id = DB::table('offers')->where('id',$id)->value('consultants_id');
 			DB::table('consultants')->where('id',$consultants_id)->update(['halas_id'=> 2]);
-
+$this->client_receive_offer($id);
 			//This will redirect back and gives a message
 			CRUDBooster::redirect($_SERVER['HTTP_REFERER'],"تم تفعيل العرض للعميل","info");
 		 }

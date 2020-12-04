@@ -32,8 +32,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12"><nav class="navbar navbar-expand-lg navbar-light">
-                      <a class="navbar-brand logo_1" href="/"> <img src="{{ asset('img/single_page_logo.png') }}" alt="logo"> </a>
-                      <a class="navbar-brand logo_2" href="/"> <img src="{{ asset('img/logo.png') }}" alt="logo"> </a>
+                         <a class="navbar-brand logo_1" href="/"> <img width="400" height="80" src="{{ asset('img/main-logo.png') }}" alt="logo"> </a>
+                      <a class="navbar-brand logo_2" href="/"> <img src="{{ asset('img/main-logo.png') }}" alt="logo"> </a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse"
                           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                           aria-expanded="false" aria-label="Toggle navigation">
@@ -42,42 +42,54 @@
 
                       <div class="collapse navbar-collapse main-menu-item justify-content-end"
                           id="navbarSupportedContent">
-                          <ul class="navbar-nav align-items-center">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/">الرئيسية</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">عن المنصة</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">الدورات </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">المدونة</a>
-                            </li>
-                   
-                           <li class="nav-item">
-                                <a class="nav-link" href="/contact">تواصل معنا</a>
-                            </li>
-                            @if(CRUDBooster::myId())
+                 
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/">الرئيسية</a>
+                                </li>
+                      
+                              
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/courses">الدورات </a>
+                                </li>
+                              
+         @if(CRUDBooster::myId())
                                      <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     حسابي
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/myconsultants">استشاراتي</a>
-                                    <a class="dropdown-item" href="#">التصاميم</a>
-                                    <a class="dropdown-item" href="#">تصميم تفاصيل الدورة</a>
+                                        <a class="dropdown-item" href="/myenrollments">دوراتي</a>
+                                    <a class="dropdown-item" href="/profile">معلومات الحساب</a>
+                                    <a class="dropdown-item" href="/admin/logout">تسجيل خروج</a>
+
+
 
                                 </div>
                             </li>
-                            @endif
- 
-                            <li class="d-none d-lg-block">
-                                <a class="btn_1" href="#">Get a Quote</a>
+                            @else 
+              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    دخول الحساب
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/login">تسجيل دخول</a>
+                                    <a class="dropdown-item" href="/register">تسجيل جديد</a>
+
+
+                                </div>
                             </li>
 
-                        </ul>
+
+                            @endif
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/contact">تواصل معنا</a>
+                                </li>
+                                <li class="d-none d-lg-block">
+                                    <a class="btn_1" href="/become-instructor">كن معلما</a>
+                                </li>
+                            </ul>
                       </div>
                   </nav>
                 </div>
@@ -93,8 +105,8 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb_iner text-center">
                         <div class="breadcrumb_iner_item">
-							<h2>Elements</h2>
-							<p>Home <span>/</span>Elements</p>
+							<h2>طلب استشارة</h2>
+							<p>الرئيسية <span>/</span>طلب استشارة</p>
                         </div>
                     </div>
                 </div>
@@ -228,7 +240,7 @@
             <div class="row justify-content-between">
                 <div class="col-sm-6 col-md-4 col-xl-3">
                     <div class="single-footer-widget footer_1">
-                        <a href="index.html"> <img src="img/logo.jpeg" alt=""> </a>
+                        <a href="/"> <img src="{{ asset('img/main-logo.png') }}" alt=""> </a>
                         <p>But when shot real her. Chamber her one visite removal six
                             sending himself boys scot exquisite existend an </p>
                         <p>But when shot real her hamber her </p>

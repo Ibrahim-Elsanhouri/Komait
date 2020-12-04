@@ -132,14 +132,11 @@
 يتم تفعيل الاتفاقية بعد السداد
 
                 </li>
-             <!--
  <li>
-                     Please read all terms and polices on  www.yourdomaon.com for returns, replacement and other issues.
-
+نشتهر نخن مكتب كميت للخدمات الاستشارية بالمحافظة على سرية المستندات و عدم افشاء اسرار الشركة لاي جهة 
                  </li>
 
 
-             -->   
              </ol>
              </div>
          </div>

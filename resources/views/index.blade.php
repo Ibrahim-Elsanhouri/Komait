@@ -58,7 +58,12 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/myconsultants">استشاراتي</a>
-                                    <a class="dropdown-item" href="#">دوراتي</a>
+                                        <a class="dropdown-item" href="/myenrollments">دوراتي</a>
+    <a class="dropdown-item" href="/notifications"> ({{ CRUDBooster::myNotifications() }})الاشعارات </a>
+
+                                    <a class="dropdown-item" href="/profile">معلومات الحساب</a>
+                                    <a class="dropdown-item" href="/admin/logout">تسجيل خروج</a>
+
 
 
                                 </div>

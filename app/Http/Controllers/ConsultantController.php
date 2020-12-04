@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Consultant; 
+use App\Notifications\Message; 
+
 use CRUDBooster; 
 class ConsultantController extends Controller
 {
+    use Message; 
     public function __construct()
     {
       // $this->middleware('myauth');
@@ -24,7 +27,7 @@ class ConsultantController extends Controller
     public function store(Request $request){
      //   dd($request->all()); 
         Consultant::create($request->all()); 
-        
+        $this->admin_new_consultant(); 
         return back()->with('warning' , 'تم ارسال طلبك الى قسم الاستشارات بنجاح , سيتم ارسال العرض في اقرب وقت ⏳');
     }
     public function myconsultants(){

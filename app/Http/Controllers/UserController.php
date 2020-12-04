@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Mail\VerificationMail;
 use App\User; 
 use App\UserVerify; 
+use App\Enrollment;
+use CRUDBooster;
+
 class UserController extends Controller
 
 {
@@ -63,5 +66,19 @@ return redirect('/login')->with('info' , '📧 تم التسجيل بنجاح �
         
             return redirect('/login')->with('warning' , 'تم تفعيل الحساب , يسعدنا تواجدك 💖'); 
         }}
+
+
+        public function profile(){
+            return view('users.profile');
+        }
+        public function myenrollments(){
+            $enrollments  = Enrollment::where('cms_users_id' , CRUDBooster::myId())->get();
+        //    dd($user->notes());
+      //  dd($user); 
+    //  dd($user->consultants); 
+//dd($enrollments);
+            return view('users.enrollments' , compact('enrollments'));
+    
+        }
 
 }

@@ -65,8 +65,13 @@
                   <input class="form-control" name="mobile"  type="text"   placeholder = 'رقم الجوال'>
                 </div>
               </div>
+      
            
-           
+  
+
+
+
+
             </div>
             <div class="text-center">
             
@@ -83,7 +88,6 @@
       </div>
     </div>
   </section>
-
 
 
 
