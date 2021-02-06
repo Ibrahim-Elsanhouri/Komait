@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Etrain</title>
+    <title>منصة كميت الاستشارية التدريبية</title>
     <link rel="icon" href="img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -23,7 +23,7 @@
     <!-- swiper CSS -->
     <link rel="stylesheet" href="css/slick.css">
     <!-- style CSS -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -32,8 +32,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12"><nav class="navbar navbar-expand-lg navbar-light">
-                         <a class="navbar-brand logo_1" href="/"> <img width="400" height="80" src="{{ asset('img/main-logo.png') }}" alt="logo"> </a>
-                      <a class="navbar-brand logo_2" href="/"> <img src="{{ asset('img/main-logo.png') }}" alt="logo"> </a>
+                         <a class="navbar-brand logo_1" href="/"> <img width="400" height="80" src="{{ asset('img/komait.jpeg') }}" alt="logo"> </a>
+                      <a class="navbar-brand logo_2" href="/"> <img src="{{ asset('img/komait.jpeg') }}" alt="logo"> </a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse"
                           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                           aria-expanded="false" aria-label="Toggle navigation">
@@ -206,7 +206,7 @@
                 <label>ملف الاستشارة</label>
 </div>
 								<input type="file" name="file" placeholder="ملف الاستشارة" 
-								 required class="single-input">
+								  class="single-input">
 							</div>
                          
 						
@@ -240,7 +240,7 @@
             <div class="row justify-content-between">
                 <div class="col-sm-6 col-md-4 col-xl-3">
                     <div class="single-footer-widget footer_1">
-                        <a href="/"> <img src="{{ asset('img/main-logo.png') }}" alt=""> </a>
+                        <a href="/"> <img src="{{ asset('img/komait.jpeg') }}" alt=""> </a>
                         <p>But when shot real her. Chamber her one visite removal six
                             sending himself boys scot exquisite existend an </p>
                         <p>But when shot real her hamber her </p>

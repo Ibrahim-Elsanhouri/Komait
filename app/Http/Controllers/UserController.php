@@ -67,7 +67,9 @@ return redirect('/login')->with('info' , '📧 تم التسجيل بنجاح �
             return redirect('/login')->with('warning' , 'تم تفعيل الحساب , يسعدنا تواجدك 💖'); 
         }}
 
-
+        public function edit(){
+            return view('users.edit');
+        }
         public function profile(){
             return view('users.profile');
         }

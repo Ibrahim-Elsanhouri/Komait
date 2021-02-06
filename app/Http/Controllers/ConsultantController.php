@@ -12,6 +12,7 @@ class ConsultantController extends Controller
     use Message; 
     public function __construct()
     {
+      
       // $this->middleware('myauth');
 
           $this->middleware('myauth')->only('enrollment');
@@ -23,6 +24,10 @@ class ConsultantController extends Controller
       //  dd('test');
         return view('consultants.create'); 
 
+    }
+    public function show($id){
+      $consultant = Consultant::find($id); 
+      return view ('consultants.show' , compact('consultant')); 
     }
     public function store(Request $request){
      //   dd($request->all()); 

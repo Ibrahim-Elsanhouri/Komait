@@ -10,6 +10,7 @@
 use Message; 
 	    public function cbInit() {
 //client_receive_offer($id)
+
 			# START CONFIGURATION DO NOT REMOVE THIS LINE
 			$this->title_field = "id";
 			$this->limit = "20";
@@ -33,9 +34,10 @@ use Message;
 			$this->col = [];
 			$this->col[] = ["label"=>"تكلفة الاستشارة","name"=>"cost"];
 			$this->col[] = ["label"=>"مدة التنفيذ","name"=>"period"];
+			$this->col[] = ["label"=>"عدد الدفعات","name"=>"batches"];
+
 			$this->col[] = ["label"=>"الادارة","name"=>"approved"];
 			$this->col[] = ["label"=>"العميل","name"=>"status"];
-
 			$this->col[] = ["label"=>"الاستشارة","name"=>"consultants_id","join"=>"consultants,id"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
@@ -44,8 +46,8 @@ use Message;
 			$this->form[] = ['label'=>'تكلفة الاستشارة','name'=>'cost','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'مدة التنفيذ','name'=>'period','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'تفاصيل العرض','name'=>'details','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
-
 			$this->form[] = ['label'=>'الاستشارة','name'=>'consultants_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'consultants,id'];
+			$this->form[] = ['label'=>'عدد الدفعات','name'=>'batches','validation'=>'required','width'=>'col-sm-9'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -53,6 +55,7 @@ use Message;
 			//$this->form[] = ['label'=>'تكلفة الاستشارة','name'=>'cost','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'مدة التنفيذ','name'=>'period','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'تفاصيل العرض','name'=>'details','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
+			//
 			//$this->form[] = ['label'=>'الاستشارة','name'=>'consultants_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'consultants,id'];
 			# OLD END FORM
 

@@ -49,7 +49,9 @@
               <span>
                  <strong> مدة التنفيذ بالايام  : </strong>   {{ $contract->offer->period }}
              </span>
-             
+               <span>
+                 <strong>   عدد الدفعات  : </strong>   {{ $contract->offer->batches }}
+             </span>
              <hr />
          </div>
      </div>
@@ -121,6 +123,7 @@
                   <h4> <strong><?php 
                                     echo $contract->offer->cost + $contract->offer->cost * 0.15 ?> ريال سعودي</strong> </h4>
              </div>
+
          </div>
      </div>
       <div class="row">
@@ -136,7 +139,15 @@
 نشتهر نخن مكتب كميت للخدمات الاستشارية بالمحافظة على سرية المستندات و عدم افشاء اسرار الشركة لاي جهة 
                  </li>
 
+<li>
+<strong>بنود الاتفاقية</strong>
 
+</li>
+
+<li>
+<strong>{{ $contract->offer->details }}</strong>
+
+</li>
              </ol>
              </div>
          </div>
@@ -145,11 +156,26 @@
              <hr/>
              <button href="#"  class="btn btn-primary btn-lg" onclick="window.print()
 ">طباعة الاتفاقية</button>
+            <a href="{{ route('invoice.pdf' , $contract->id) }}"  target="_blank" class="btn btn-primary btn-lg">سجل الفواتير</a>
              &nbsp;&nbsp;&nbsp;
-           <!--  <form action="{{ route('paylink.token' , $contract->offer->id) }}" method="post">@csrf    <button type="submit" class="btn btn-success btn-lg">السداد للتفعيل</button></form> -->
+             
+             @if($contract->confirmed == 0)
+             <form action="{{ route('myfatoorah.initial' , $contract->id) }}" method="post">
+             @csrf    
+             <button type="submit" class="btn btn-success btn-lg">
+             السداد للتفعيل</button>
+             </form> 
+@endif
 
 
- <a href="{{ route('contract.confirmed' , $contract->id) }}"  class="btn btn-success btn-lg">تاكيد الاتفاقية</a>
+             @if($contract->confirmed == 1 && $contract->offer->consultant->halas_id = 6 && $contract->invoices->where('paid' , 1 )->sum('amount') != ($contract->offer->cost + $contract->offer->cost * 0.15) )
+             <form action="{{ route('myfatoorah.initial' , $contract->id) }}" method="post">
+             @csrf    
+             <button type="submit" class="btn btn-primary btn-lg">
+             سداد المبلغ المتبقي
+              </button>
+             </form> 
+@endif
 
              </div>
          </div>

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.lms')
 
 @section('content')
 
@@ -40,7 +40,14 @@
                         <img src="/{{ $course->image }}" class="special_img" alt="" width="360" height="180">
                         <div class="special_cource_text">
                             <a href="#" class="btn_4">{{ $course->category->name }}</a>
+                            @if ($course->price == 0 )
+                            <h4>مجانا</h4>
+
+                            @else 
                             <h4>{{ $course->price }}  ريال سعودي</h4>
+
+
+                            @endif
                             <a href="{{ route('course.show' , $course->id) }}">
                                 <h3>{{ $course->name }}</h3>
                             </a>
@@ -52,17 +59,18 @@
                                         <h5><a href="#">{{ $course->user->name }}</a></h5>
                                     </div>
                                 </div>
-                                <div class="author_rating">
-                                    <div class="rating">
+                            <div class="author_rating">
+                            <!--        <div class="rating">
                                         <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
                                         <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
                                         <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
                                         <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
                                         <a href="#"><img src="img/icon/star.svg" alt=""></a>
-                                    </div>
-                                    <p>3.8 Ratings</p>
+                                    </div> -->
+                                <!--    <p>3.8 Ratings</p> -->
                                 </div>
                             </div>
+                        
                         </div>
 
                     </div>

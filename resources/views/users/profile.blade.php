@@ -122,9 +122,60 @@ KMT-2020-{{ CRUDBooster::myId() }}
 
         </div>
      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
        
         </div>
+
+
+<div class="text-center">
+<a href="{{ route('user.edit') }}" class="button button-contactForm btn_1">
+تعديل معلومات الحساب
+</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
                 <div class="col-lg-1"></div>
 
       </div>

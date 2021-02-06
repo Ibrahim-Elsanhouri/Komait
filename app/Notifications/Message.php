@@ -31,6 +31,14 @@ $config['to'] = CRUDBooster::adminPath('consultants');
 $config['id_cms_users'] = [1]; //This is an array of id users
 CRUDBooster::sendNotification($config);
     }
+
+    // the client pay for an invoice
+    public function admin_new_payment(){
+        $config['content'] = "تم  سداد فاتورة من قبل العميل ";
+$config['to'] = CRUDBooster::adminPath('invoices');
+$config['id_cms_users'] = [1]; //This is an array of id users
+CRUDBooster::sendNotification($config);
+    }
  
  // to client when he receive offer
 

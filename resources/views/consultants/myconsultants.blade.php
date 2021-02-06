@@ -86,7 +86,7 @@
       <th scope="row">
                 <div class="text-center">K2020-{{ $myconsultant->id }}</div>
       </th>
-      <td>                  <div class="text-center">{{ $myconsultant->subject  }}</div>
+      <td>                  <div class="text-center"><a href="{{ route('consultant.show' ,  $myconsultant->id  ) }}">{{ $myconsultant->subject  }}</a></div>
 </td>
     <td>
     <div class="text-center">

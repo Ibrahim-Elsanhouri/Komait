@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="css/magnific-popup.css">
     <!-- swiper CSS -->
     <link rel="stylesheet" href="css/slick.css">
-    <!-- style CSS -->
-    <link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="/"> <img width="80px" height="50px" src="img/main-logo.png" alt="logo"> </a>
+                        <a class="navbar-brand" href="/"> <img width="300px" height="80px" src="img/komait.jpeg" alt="logo"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -108,7 +108,7 @@
                             <h5>منصةاستشارية تدريبية عربية</h5>
                             <h1>منصة كميت الاستشاريةالتدريبية</h1>
                             <p>
-                            اكمل جميع عملياتك الاستشارية و انصم لنا في المحتوى التدريبي 
+                            اكمل جميع عملياتك الاستشارية و انضم لنا في المحتوى التدريبي 
                             </p>
                             <a href="/courses" class="btn_1">عرض الدورات</a>
                             <a href="/consultant" class="btn_2">طلب استشارة</a>
@@ -126,8 +126,9 @@
             <div class="row">
                 <div class="col-sm-6 col-xl-3 align-self-center">
                     <div class="single_feature_text ">
-                        <h2>انصم لنا <br> كمدرب</h2>
-                        <p>نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي   </p>
+                        <h2>فلسفتنا بسيطة  </h2>
+                        <p>نهدف لمساعدة عملائنا على النجاح. هذا هو السبب في أننا نخصص لكل عميل فريق عمل متخصص.
+</p>
                         <a href="/become-instructor" class="btn_1">طلب الانضمام</a>
                     </div>
                 </div>
@@ -135,10 +136,11 @@
                     <div class="single_feature">
                         <div class="single_feature_part">
                             <span class="single_feature_icon"><i class="ti-layers"></i></span>
-                            <h4>
-                                
-                                دعم متواصل</h4>
-                            <p>دعم متواصل 
+                            <h4> 
+                                 تنوعنا
+                                </h4>
+                            <p>
+مجموعة واسعة من الخدمات لكل مرحلة من مراحل نمو منشأتكم.
                             </p>
                         </div>
                     </div>
@@ -147,9 +149,9 @@
                     <div class="single_feature">
                         <div class="single_feature_part">
                             <span class="single_feature_icon"><i class="ti-new-window"></i></span>
-                            <h4>مدربين اكفاء</h4>
+                            <h4>مهمتنا</h4>
                             <p>
-                                مدربين اكفاء مدربين اكفاء مدربين اكفاء
+تقديم خدمات مهنية استثنائية وذات قيمة مضافة لعملائنا، لنكون الخيار المفضل والذي يتعدى طموحاتهم.
                             </p>
                         </div>
                     </div>
@@ -158,8 +160,8 @@
                     <div class="single_feature">
                         <div class="single_feature_part single_feature_part_2">
                             <span class="single_service_icon style_icon"><i class="ti-light-bulb"></i></span>
-                            <h4>محتوى فريد </h4>
-                            <p>نقدم محتوى فريد متميز</p>
+                            <h4> رؤيتنا </h4>
+                            <p>أن نكون الخيار الأول لشركاء نجاحنا في تقديم الخدمات الاستشارية المتكاملة.</p>
                         </div>
                     </div>
                 </div>
@@ -179,19 +181,19 @@
                 </div>
                 <div class="col-md-5 col-lg-5">
                     <div class="learning_member_text">
-                        <h5>عن المنصة </h5>
+                        <h5> الخدمات </h5>
                         <h2>
-                          تعلم بشكل يدوي 
-                        
+استشارية تدريبية تقنية                        
                         </h2>
-                        <p>منصة  كميت منصة عربية تهتم بالمحتوى الفني و التقني</p>
+                        <p>نقدم افضل الخدمات والحلول للتحديات التي تواجهها المنظمات في إدارة وتطوير العنصر البشري 
+</p>
                         <ul>
-                            <li><span class="ti-pencil-alt"></span>Him lights given i heaven second yielding seas
-                                gathered wear</li>
-                            <li><span class="ti-ruler-pencil"></span>Fly female them whales fly them day deep given
-                                night.</li>
+                            <li><span class="ti-pencil-alt"></span>تقديم حلول متكاملة خلال دورة حياة الموظف في المنظمات 
+</li>
+                            <li><span class="ti-ruler-pencil"></span>تصميم برامج تطويرية متكاملة تلبي احتياجات المنظمات 
+</li>
                         </ul>
-                        <a href="#" class="btn_1">Read More</a>
+                        <a href="#" class="btn_1">اقرا اكثر</a>
                     </div>
                 </div>
             </div>
@@ -245,24 +247,23 @@
                         <h2>
                         نظام التعليم عن بعد
                         </h2>
-                        <p>
-                            نظام التعليم عن بعد
-                            نظام التعليم عن بعد
+                        <p>توفر منصة كميت خدمات تدريبية متكاملة من خلال المنصة
+                    
 
                         </p>
                         <div class="row">
                             <div class="col-sm-6 col-md-12 col-lg-6">
                                 <div class="learning_member_text_iner">
                                     <span class="ti-pencil-alt"></span>
-                                    <h4>مارس هوايتك في اي مكان</h4>
-                                    <p>There earth face earth behold she star so made void two given and also our</p>
+                                    <h4> تعلم في اي مكان</h4>
+                                    <p>يمكنك التسجيل في الدورة و حضورها عن بعد في اي وقت او مكان</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-12 col-lg-6">
                                 <div class="learning_member_text_iner">
                                     <span class="ti-stamp"></span>
                                     <h4>مدربين اكفاء</h4>
-                                    <p>There earth face earth behold she star so made void two given and also our</p>
+                                    <p>مدريبين ذوي خبرة عالية في مختلف المجالات</p>
                                 </div>
                             </div>
                         </div>
@@ -279,81 +280,84 @@
     
     
     
-    learning part end-->
 
     <!--::review_part start::-->
    
 
-    <!-- footer part start-->
-    <footer class="footer-area" style="direction: rtl;">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-sm-6 col-md-4 col-xl-3">
-                    <div class="single-footer-widget footer_1">
-                        <a href="#"> <img src="img/main-logo.png" alt=""> </a>
-                        <p>But when shot real her. Chamber her one visite removal six
-                            sending himself boys scot exquisite existend an </p>
-                        <p>But when shot real her hamber her </p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-xl-4">
-                    <div class="single-footer-widget footer_2">
-                        <h4>Newsletter</h4>
-                        <p>Stay updated with our latest trends Seed heaven so said place winged over given forth fruit.
-                        </p>
-                        <form action="#">
-                            <div class="form-group">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder='Enter email address'
-                                        onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Enter email address'">
-                                    <div class="input-group-append">
-                                        <button class="btn btn_1" type="button"><i class="ti-angle-right"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="social_icon">
-                            <a href="#"> <i class="ti-facebook"></i> </a>
-                            <a href="#"> <i class="ti-twitter-alt"></i> </a>
-                            <a href="#"> <i class="ti-instagram"></i> </a>
-                            <a href="#"> <i class="ti-skype"></i> </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 col-md-4">
-                    <div class="single-footer-widget footer_2">
-                        <h4>Contact us</h4>
-                        <div class="contact_info">
-                            <p><span> Address :</span> Hath of it fly signs bear be one blessed after </p>
-                            <p><span> Phone :</span> +2 36 265 (8060)</p>
-                            <p><span> Email : </span>info@colorlib.com </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="copyright_part_text text-center">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    <footer class="footer-area" style="direction: rtl;">
+      <div class="container">
+          <div class="row justify-content-between">
+              <div class="col-sm-6 col-md-4 col-xl-3">
+                  <div class="single-footer-widget footer_1">
+                      <a href="#"> <img src="{{ asset('img/main-logo.png') }}" alt=""> </a>
+                   
+                      <p>منصة كميت الاستشارية منصة عربية تقدم خدمات استشارية و تدريبية </p>
+                      <a href="/admin" style="color:blue">قسم الادارة</a>
+                  </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-xl-4">
+                  <div class="single-footer-widget footer_2">
+                      <h4>وسائل التواصل الاجتماعي</h4>
+                      <p>
+سعيدين بتواصلكم معنا على مدار الساعة                      </p>
+    
+                      <div class="social_icon">
+                          <a href="https://www.facebook.com/KomaitKSA/"> <i class="ti-facebook"></i> </a>
+                          <a href="https://twitter.com/KomaitKSA"> <i class="ti-twitter-alt"></i> </a>
+                          <a href="https://www.instagram.com/komaitksa/"> <i class="ti-instagram"></i> </a>
+                          <a href="https://www.linkedin.com/company/komaitksa/?originalSubdomain=sa"> <i class="ti-linkedin"></i> </a>
+            <a href="https://www.youtube.com/channel/UCOHrkGGPcTpTJN1HEZ1NBSw"> <i class="ti-youtube"></i> </a>
+
+                      </div>
+                  </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 col-md-4">
+                  <div class="single-footer-widget footer_2">
+                      <h4>تواصل معنا</h4>
+                      <div class="contact_info">
+                          <p><span> العنوان :</span>طريق الملك فهد</p>
+                          <p><span> الهاتف :</span> ‪9200 15166 </p>
+                          <p><span> البريد الالكتروني : </span>komaitksa@gmail.com‏</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="copyright_part_text text-center">
+                      <div class="row">
+                          <div class="col-lg-12">
+                              <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
     <!-- footer part end-->
 
     <!-- jquery plugins here-->
     <!-- jquery -->
+    <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5e504f34a89cda5a18875676/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
     <script src="js/jquery-1.12.1.min.js"></script>
     <!-- popper js -->
     <script src="js/popper.min.js"></script>

@@ -22,7 +22,8 @@
     <!-- swiper CSS -->
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <!-- style CSS -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
@@ -33,8 +34,8 @@
           <div class="row align-items-center">
               <div class="col-lg-12">
                   <nav class="navbar navbar-expand-lg navbar-light">
-                      <a class="navbar-brand logo_1" href="/"> <img width="400" height="80" src="{{ asset('img/main-logo.png') }}" alt="logo"> </a>
-                      <a class="navbar-brand logo_2" href="/"> <img width="400" height="80" src="{{ asset('img/main-logo.png') }}" alt="logo"> </a>
+                      <a class="navbar-brand logo_1" href="/"> <img width="300" height="80" src="{{ asset('img/komait.jpeg') }}" alt="logo"> </a>
+                      <a class="navbar-brand logo_2" href="/"> <img width="300" height="80" src="{{ asset('img/komait.jpeg') }}" alt="logo"> </a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse"
                           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                           aria-expanded="false" aria-label="Toggle navigation">
@@ -109,34 +110,25 @@
           <div class="row justify-content-between">
               <div class="col-sm-6 col-md-4 col-xl-3">
                   <div class="single-footer-widget footer_1">
-                      <a href="#"> <img src="{{ asset('img/main-logo.png') }}" alt=""> </a>
-                      <p>But when shot real her. Chamber her one visite removal six
-                          sending himself boys scot exquisite existend an </p>
-                      <p>But when shot real her hamber her </p>
+                      <a href="#"> <img src="{{ asset('img/komait.jpeg') }}" alt=""> </a>
+                   
+                      <p>منصة كميت الاستشارية منصة عربية تقدم خدمات استشارية و تدريبية </p>
+                      <a href="/admin" style="color:blue">قسم الادارة</a>
                   </div>
               </div>
               <div class="col-sm-6 col-md-4 col-xl-4">
                   <div class="single-footer-widget footer_2">
-                      <h4>Newsletter</h4>
-                      <p>Stay updated with our latest trends Seed heaven so said place winged over given forth fruit.
-                      </p>
-                      <form action="#">
-                          <div class="form-group">
-                              <div class="input-group mb-3">
-                                  <input type="text" class="form-control" placeholder='Enter email address'
-                                      onfocus="this.placeholder = ''"
-                                      onblur="this.placeholder = 'Enter email address'">
-                                  <div class="input-group-append">
-                                      <button class="btn btn_1" type="button"><i class="ti-angle-right"></i></button>
-                                  </div>
-                              </div>
-                          </div>
-                      </form>
+                      <h4>وسائل التواصل الاجتماعي</h4>
+                      <p>
+سعيدين بتواصلكم معنا على مدار الساعة                      </p>
+    
                       <div class="social_icon">
-                          <a href="#"> <i class="ti-facebook"></i> </a>
-                          <a href="#"> <i class="ti-twitter-alt"></i> </a>
-                          <a href="#"> <i class="ti-instagram"></i> </a>
-                          <a href="#"> <i class="ti-skype"></i> </a>
+                          <a href="https://www.facebook.com/KomaitKSA/"> <i class="ti-facebook"></i> </a>
+                          <a href="https://twitter.com/KomaitKSA"> <i class="ti-twitter-alt"></i> </a>
+                          <a href="https://www.instagram.com/komaitksa/"> <i class="ti-instagram"></i> </a>
+                          <a href="https://www.linkedin.com/company/komaitksa/?originalSubdomain=sa"> <i class="ti-linkedin"></i> </a>
+            <a href="https://www.youtube.com/channel/UCOHrkGGPcTpTJN1HEZ1NBSw"> <i class="ti-youtube"></i> </a>
+
                       </div>
                   </div>
               </div>
@@ -144,9 +136,9 @@
                   <div class="single-footer-widget footer_2">
                       <h4>تواصل معنا</h4>
                       <div class="contact_info">
-                          <p><span> العنوان :</span> Hath of it fly signs bear be one blessed after </p>
-                          <p><span> الهاتف :</span> +2 36 265 (8060)</p>
-                          <p><span> البريد الالكتروني : </span>info@colorlib.com </p>
+                          <p><span> العنوان :</span>طريق الملك فهد</p>
+                          <p><span> الهاتف :</span> ‪9200 15166 </p>
+                          <p><span> البريد الالكتروني : </span>komaitksa@gmail.com‏</p>
                       </div>
                   </div>
               </div>
@@ -170,7 +162,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
       </div>
   </footer>
 <!-- footer part end-->
-
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5e504f34a89cda5a18875676/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 <!-- jquery plugins here-->
 <!-- jquery -->
 <script src="{{ asset('js/jquery-1.12.1.min.js') }}"></script>
@@ -198,6 +202,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="{{ asset('js/slick.min.js') }}"></script>
 <script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
 <script src="{{ asset('js/waypoints.min.js') }}"></script>
+<!-- payment js -->
+<script src="{{ asset('js/payment.js') }}"></script>
 <!-- custom js -->
 <script src="{{ asset('js/custom.js') }}"></script>
 </body>

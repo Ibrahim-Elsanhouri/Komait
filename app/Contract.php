@@ -8,7 +8,9 @@ class Contract extends Model
 {
     //
     public $guarded = [];
-
+    public function invoices(){
+        return $this->hasMany('App\Invoice' , 'contracts_id'); 
+    }
       public function user(){
         return $this->belongsTo('App\User' , 'cms_users_id'); 
     }

@@ -1,6 +1,6 @@
 <?php
 use RealRashid\SweetAlert\Facades\Alert;
-
+use App\Payment\LmsPaymentService;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,11 +26,15 @@ Route::post('/register' , 'UserController@postRegister')->name('user.register');
 //verifyEmail
 
 Route::get('/profile' , 'UserController@profile')->name('user.profile'); 
+Route::get('/profile/edit' , 'UserController@edit')->name('user.edit'); 
+
 Route::get('/notifications' , 'NotificationController@index'); 
 
 Route::get('/verifyEmail/{token}' , 'UserController@verifyEmail')->name('user.verify'); 
 
 Route::get('/consultant' , 'ConsultantController@create')->name('consultant.create'); 
+Route::get('/consultant/{id}' , 'ConsultantController@show')->name('consultant.show'); 
+
 Route::post('/consultant' , 'ConsultantController@store')->name('consultant.store'); 
 Route::get('/myconsultants' , 'ConsultantController@myconsultants')->name('consultant.myconsultants'); 
 //consultant_notes
@@ -78,3 +82,23 @@ Route::get('/myenrollments ','UserController@myenrollments');
 
 
 Route::post('/enrollment' , 'EnrollmentController@store')->name('enrollment.store'); 
+
+
+Route::post('/initial_payment/{id}' , 'MyfatoorahController@initial_payment')->name('myfatoorah.initial');
+Route::post('/execute_payment/{id}' , 'MyfatoorahController@execute_payment')->name('myfatoorah.execute');
+Route::post('/DirectPayment' , 'MyfatoorahController@direct_payment')->name('myfatoorah.direct');
+
+Route::get('/invoices_report/{id}' , 'InvoiceController@createInvoicePDF')->name('invoice.pdf');
+/*
+
+Route::get('payment/{service}' , function($service){
+ //dd($service); 
+ $service = sprintf("App\\Payment\\".$service); 
+ //dd($service);
+$class = new $service;
+//$class  =  sprintf(); 
+$class->initial_payment(1);
+
+});
+
+*/

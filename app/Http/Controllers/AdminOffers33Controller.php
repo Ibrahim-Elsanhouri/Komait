@@ -35,6 +35,7 @@
 			$this->col = [];
 			$this->col[] = ["label"=>"التكلفة","name"=>"cost"];
 			$this->col[] = ["label"=>"المدة","name"=>"period"];
+			$this->col[] = ["label"=>"عدد الدفعات","name"=>"batches"];
 			$this->col[] = ["label"=>"القبول من العميل","name"=>"status"];
 			$this->col[] = ["label"=>"القبول من الادارة","name"=>"approved"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
@@ -44,19 +45,20 @@
 			$this->form[] = ['label'=>'Cost','name'=>'cost','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Period','name'=>'period','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Details','name'=>'details','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Consultants Id','name'=>'consultants_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'consultants,id'];
+			$this->form[] = ['label'=>'Batches','name'=>'batches','validation'=>'required','width'=>'col-sm-9','datatable'=>'consultants,id'];
+			$this->form[] = ['label'=>'Consultants Id','name'=>'consultants_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Status','name'=>'status','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Approved','name'=>'approved','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ["label"=>"Cost","name"=>"cost","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			//$this->form[] = ["label"=>"Period","name"=>"period","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			//$this->form[] = ["label"=>"Details","name"=>"details","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
-			//$this->form[] = ["label"=>"Consultants Id","name"=>"consultants_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"consultants,id"];
-			//$this->form[] = ["label"=>"Status","name"=>"status","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			//$this->form[] = ["label"=>"Approved","name"=>"approved","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ['label'=>'Cost','name'=>'cost','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Period','name'=>'period','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Details','name'=>'details','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Consultants Id','name'=>'consultants_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'consultants,id'];
+			//$this->form[] = ['label'=>'Status','name'=>'status','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Approved','name'=>'approved','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/* 

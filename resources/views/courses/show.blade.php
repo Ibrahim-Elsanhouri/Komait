@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.lms')
 
 @section('content')
       <section class="breadcrumb breadcrumb_bg" >
@@ -100,18 +100,24 @@
 
                         </ul>
                        @if ($course->users->contains(CRUDBooster::myId()))
-                       <form method="post" action="{{  route('enrollment.store') }}">
+                                               <a href="#" class="btn_1 d-block"><i class="fa fa-heart" aria-hidden="true"></i>  انت منضم للدورة  </a>
+                                               @endif
+                       @if (!$course->users->contains(CRUDBooster::myId()) && $course->price == 0)
+     <form method="post" action="{{  route('enrollment.store') }}">
                        @csrf
                        <input type="hidden" name="cms_users_id" value="{{ CRUDBooster::myId() }}"/> 
                         <input type="hidden" name="courses_id" value="{{ $course->id }}"/> 
 
                        <button type="submit" class="btn_1 d-block">انضم الى الدورة</button>
                        </form>
-
                        @else
+ <form method="post" action="{{  route('enrollment.store') }}">
+                       @csrf
+                       <input type="hidden" name="cms_users_id" value="{{ CRUDBooster::myId() }}"/> 
+                        <input type="hidden" name="courses_id" value="{{ $course->id }}"/> 
 
-
-                        <a href="#" class="btn_1 d-block"><i class="fa fa-heart" aria-hidden="true"></i>  انت منضم للدورة  </a>
+                       <button type="submit" class="btn_1 d-block">السداد  </button>
+                       </form>
                        @endif
                 
 

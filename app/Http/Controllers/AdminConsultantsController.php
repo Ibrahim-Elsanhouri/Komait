@@ -80,12 +80,18 @@
 			'parent_columns'=>'subject',
 			'foreign_key'=>'consultants_id',
 			'button_color'=>'success',
-			'button_icon'=>'fa fa-bars'];
+			'button_icon'=>'fa fa-money'];
 			$this->sub_module[] = ['label'=>'العروض',
 			'path'=>'offers',
 			'parent_columns'=>'subject'
 			,'foreign_key'=>'consultants_id'
 			,'button_color'=>'primary','button_icon'=>'fa fa-envelope'];
+			$this->sub_module[] = ['label'=>'اتفاقيات العمل',
+			'path'=>'contracts',
+			'parent_columns'=>'name',
+			'foreign_key'=>'consultants_id',
+			'button_color'=>'danger',
+			'button_icon'=>'fa fa-credit-card-alt'];
 
 	        /* 
 	        | ---------------------------------------------------------------------- 
