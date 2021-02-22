@@ -57,6 +57,12 @@
 	        */
 	        $this->sub_module = array();
 
+			$this->sub_module[] = ['label'=>'معايير الاستشارة',
+			'path'=>'keys',
+			'parent_columns'=>'name',
+			'foreign_key'=>'types_id',
+			'button_color'=>'success'
+			,'button_icon'=>'fa fa-bars'];
 
 	        /* 
 	        | ---------------------------------------------------------------------- 

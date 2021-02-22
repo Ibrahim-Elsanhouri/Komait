@@ -5,6 +5,7 @@ namespace App\Policies;
 use App\Lesson;
 use App\User;
 use App\Enrollment; 
+use CRUDBooster; 
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class LessonPolicy
@@ -21,7 +22,10 @@ class LessonPolicy
     public function show (Lesson $lesson)
     {
      //   return $user->id === $post->user_id;
-     return Enrollment::where('courses_id' , $lesson->course->id )->where('cms_users_id' , CRUDBooster::myId())->count() === 1; 
+  
+     
+
+
     } 
 
     public function viewAny(User $user)
@@ -36,11 +40,13 @@ class LessonPolicy
      * @param  \App\Lesson  $lesson
      * @return mixed
      */
-    public function view(User $user, Lesson $lesson)
+    public function view(Lesson $lesson)
     {
         //
-    }
+        return $lesson->course->users->contains(CRUDBooster::myId()) == true;
 
+    
+    }
     /**
      * Determine whether the user can create lessons.
      *

@@ -1,9 +1,13 @@
 <?php
 
 namespace App\Providers;
-
+use App\Policies\LessonPolicy;
+use App\Lesson;
+use CRUDBooster;
+use App\Enrollment;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Auth\Access\Response;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -13,7 +17,9 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-         'App\Lesson' => 'App\Policies\LessonPolicy',
+
+      'App\Model' => 'App\Policies\ModelPolicy',
+      'App\Lesson' => 'App\Policies\LessonPolicy'
     ];
 
     /**
@@ -23,6 +29,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+
         $this->registerPolicies();
 
         //

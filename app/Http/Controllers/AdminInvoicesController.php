@@ -43,10 +43,9 @@
 			$this->form[] = ['label'=>'قيمة الفاتورة','name'=>'amount','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'الاتفاقية','name'=>'contracts_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'contracts,id'];
 			$this->form[] = ['label'=>'رقم الفاتورة','name'=>'InvoiceId','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'حالة الفاتورة','name'=>'paid','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'رابط فاتورتي','name'=>'PaymentURL','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'تاريخ الفوترة','name'=>'created_at','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
-			$this->form[] = ['label'=>'تاريخ السداد','name'=>'updated_at','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'حالة الفاتورة','name'=>'paid','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'0;1'];
+			$this->form[] = ['label'=>'تاريخ الفوترة','name'=>'created_at','type'=>'date','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'تاريخ السداد','name'=>'updated_at','type'=>'date','validation'=>'required','width'=>'col-sm-9'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -56,8 +55,8 @@
 			//$this->form[] = ['label'=>'رقم الفاتورة','name'=>'InvoiceId','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'حالة الفاتورة','name'=>'paid','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'رابط فاتورتي','name'=>'PaymentURL','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'تاريخ الفوترة','name'=>'created_at','validation'=>'required','width'=>'col-sm-9'];
-			//$this->form[] = ['label'=>'تاريخ السداد','name'=>'updated_at','validation'=>'required','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'تاريخ الفوترة','name'=>'created_at','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'تاريخ السداد','name'=>'updated_at','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
 			# OLD END FORM
 
 			/* 

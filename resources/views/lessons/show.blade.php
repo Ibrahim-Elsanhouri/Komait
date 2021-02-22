@@ -1,6 +1,9 @@
+
 @extends('layouts.master')
 
 @section('content')
+
+
       <section class="breadcrumb breadcrumb_bg" >
         <div class="container">
             <div class="row">
@@ -9,6 +12,11 @@
                         <div class="breadcrumb_iner_item">
                             <h2>{{ $lesson->course->name }}</h2>
                             <p>{{ $lesson->name }}</p>
+                            @can('view', $lesson)
+                            < The Current User Can see  The Post 
+                        @else
+                             The Current User Canbot  Create New Post
+                        @endcan
                         </div>
                     </div>
                 </div>

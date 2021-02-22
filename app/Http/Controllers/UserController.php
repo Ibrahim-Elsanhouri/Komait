@@ -34,7 +34,7 @@ public function getRegister(){
       //  $user->id_cms_privileges = $request->input('id_cms_privileges'); 
 
         $user->mobile = $request->input('mobile'); 
-        $user->id_cms_privileges = 2; 
+        $user->id_cms_privileges = 4; 
         $user->save(); 
     //    $hhh = $user->mobile;
         

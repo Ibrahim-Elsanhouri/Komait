@@ -5,6 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" value="{{ csrf_token() }}"/>
+
     <title>منصة كميت التدريبية الاستشارية</title>
     <link rel="icon" href="{{ asset('img/main-logo.png') }}">
     <!-- Bootstrap CSS -->
@@ -22,9 +24,11 @@
     <!-- swiper CSS -->
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <!-- style CSS -->
-
+       <!-- CSRF Token -->
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
+    <link  href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"> 
 </head>
 
 <body>
@@ -177,6 +181,7 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
 <!-- jquery plugins here-->
 <!-- jquery -->
+<script src="js/app.js"></script>
 <script src="{{ asset('js/jquery-1.12.1.min.js') }}"></script>
 <!-- popper js -->
 <script src="{{ asset('js/popper.min.js') }}"></script>
@@ -206,6 +211,9 @@ s0.parentNode.insertBefore(s1,s0);
 <script src="{{ asset('js/payment.js') }}"></script>
 <!-- custom js -->
 <script src="{{ asset('js/custom.js') }}"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 </body>
 
 </html>

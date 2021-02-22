@@ -8,7 +8,7 @@ class LmsPaymentService implements PaymentServiceInterface{
     protected $basURL = PaymentServiceInterface::basURL;
 
     public function initial_payment($id){
-dd($this->basURL);
+//dd($this->basURL);
     }
     public function execute_payment($id){
 

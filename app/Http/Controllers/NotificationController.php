@@ -8,9 +8,20 @@ use CRUDBooster;
 class NotificationController extends Controller
 {
     //
-    public function index(){
-        $notifications = Notification::where('id_cms_users' , CRUDBooster::myId())->orderBy('id', 'desc')->get();
-      //  dd($notifications);
-        return view('users.notifications' , compact('notifications')); 
+ 
+
+
+     public function index()
+    {
+        return view('users.notifications');
     }
+    public function user_notifications()
+    {
+      $notifications = Notification::where('id_cms_users' , CRUDBooster::myId())->orderBy('id', 'desc')->get();
+
+        return datatables()->of($notifications)
+            ->make(true);
+    }
+
+
 }

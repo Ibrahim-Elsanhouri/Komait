@@ -15,7 +15,7 @@ class ConsultantController extends Controller
       
       // $this->middleware('myauth');
 
-          $this->middleware('myauth')->only('enrollment');
+          $this->middleware('myauth');
 
      //   $this->middleware('myauth')->except('myauth');
     }
@@ -36,7 +36,7 @@ class ConsultantController extends Controller
         return back()->with('warning' , 'تم ارسال طلبك الى قسم الاستشارات بنجاح , سيتم ارسال العرض في اقرب وقت ⏳');
     }
     public function myconsultants(){
-        $myconsultants = Consultant::where('cms_users_id' , CRUDBooster::myId())->get();
+        $myconsultants = Consultant::where('cms_users_id' , CRUDBooster::myId())->orderBy('id' , 'desc')->paginate(10);
      //   dd($myconsultants);
      return view('consultants.myconsultants' , compact('myconsultants')); 
 

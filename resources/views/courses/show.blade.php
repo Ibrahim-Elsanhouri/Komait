@@ -92,25 +92,45 @@
                             <li>
                                 <a class="justify-content-between d-flex" href="#">
                                     <p>رسوم الدورة</p>
+                                     @if ($course->price == 0)
+مجانا
+                                    @else 
+
                                     <span>SR {{ $course->price }}</span>
+
+                                    @endif
                                 </a>
                             </li>
                          
                          
 
                         </ul>
+
+                        <!-- User is Enrolled -->
                        @if ($course->users->contains(CRUDBooster::myId()))
                                                <a href="#" class="btn_1 d-block"><i class="fa fa-heart" aria-hidden="true"></i>  انت منضم للدورة  </a>
                                                @endif
-                       @if (!$course->users->contains(CRUDBooster::myId()) && $course->price == 0)
-     <form method="post" action="{{  route('enrollment.store') }}">
-                       @csrf
-                       <input type="hidden" name="cms_users_id" value="{{ CRUDBooster::myId() }}"/> 
-                        <input type="hidden" name="courses_id" value="{{ $course->id }}"/> 
 
-                       <button type="submit" class="btn_1 d-block">انضم الى الدورة</button>
-                       </form>
-                       @else
+                        <!-- User Enroll if the Course Free-->
+                        @if (!$course->users->contains(CRUDBooster::myId()) && $course->price == 0)
+
+                        <form method="post" action="{{  route('enrollment.store') }}">
+                            @csrf
+                            <input type="hidden" name="cms_users_id" value="{{ CRUDBooster::myId() }}"/> 
+                             <input type="hidden" name="courses_id" value="{{ $course->id }}"/> 
+     
+                            <button type="submit" class="btn_1 d-block">انضم الى الدورة</button>
+                            </form>
+
+@endif
+
+
+
+                        <!-- User Enroll if the Course Paid-->
+
+                       @if (!$course->users->contains(CRUDBooster::myId()) && $course->price > 0)
+    
+                    
  <form method="post" action="{{  route('enrollment.store') }}">
                        @csrf
                        <input type="hidden" name="cms_users_id" value="{{ CRUDBooster::myId() }}"/> 
