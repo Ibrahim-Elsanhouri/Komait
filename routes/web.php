@@ -88,14 +88,20 @@ Route::get('/myenrollments ','UserController@myenrollments');
 
 Route::post('/enrollment' , 'EnrollmentController@store')->name('enrollment.store'); 
 
+
+
+
 // sorry i should use Polymorphism , this is bad smell code but the clients want the system in a week :D
+// the payment is refactoring
+
 Route::post('/initial_payment/{id}' , 'MyfatoorahController@initial_payment')->name('myfatoorah.initial');
 Route::post('/execute_payment/{id}' , 'MyfatoorahController@execute_payment')->name('myfatoorah.execute');
 Route::post('/DirectPayment' , 'MyfatoorahController@direct_payment')->name('myfatoorah.direct');
+
 // Payment LMS
-Route::post('/initial_payment/{id}' , 'MyfatoorahlmsController@initial_payment')->name('myfatoorah.initial');
-Route::post('/execute_payment/{id}' , 'MyfatoorahlmsController@execute_payment')->name('myfatoorah.execute');
-Route::post('/DirectPayment' , 'MyfatoorahlmsController@direct_payment')->name('myfatoorah.direct');
+//Route::post('/initial_payment/{id}' , 'MyfatoorahlmsController@initial_payment')->name('myfatoorah.initial');
+//Route::post('/execute_payment/{id}' , 'MyfatoorahlmsController@execute_payment')->name('myfatoorah.execute');
+//Route::post('/DirectPayment' , 'MyfatoorahlmsController@direct_payment')->name('myfatoorah.direct');
 
 
 
@@ -112,15 +118,12 @@ Route::post('/DirectPayment' , 'MyfatoorahlmsController@direct_payment')->name('
 Route::get('/invoices_report/{id}' , 'InvoiceController@createInvoicePDF')->name('invoice.pdf');
 
 
-// the consultant form vue js
+// the consultant form jquery
 Route::get('/types' ,  'TypeController@index');
 
-Route::get('/get_type_keys' ,  'TypeController@get_type_keys');
+Route::get('/get_type_keys/{id}' ,  'ConsultantController@GetYypeKeys');
 
 
-Route::get('vue', function(){
-    return view('vuetest'); 
-}); 
 
 /*
 ٌ

@@ -133,6 +133,7 @@
 
  <form action="{{ route('myfatoorah.execute' , $contract->id) }}"  method="post">
  @csrf
+ <input type="hidden" name="service" value="Consultant"/>
  <button type="submit" class="btn btn-primary">الدفع الان</button>
  </form>
 

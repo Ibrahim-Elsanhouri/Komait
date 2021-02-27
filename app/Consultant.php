@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 class Consultant extends Model
 {
     //
-    public $guarded = []; 
+    public $fillable = ['subject', 'details' , 'file' , 'cms_users_id' , 'types_id' , 'licences' , 'study' , 
+'docs']; 
     public function user(){
         return $this->belongsTo('App\User' , 'cms_users_id');
     }
@@ -25,5 +26,8 @@ class Consultant extends Model
     }
     public function contract(){
         return $this->hasOne('App\Contract' , 'consultants_id'); 
+    }
+    public function entries(){
+        return $this->hasMany('App\Entry' , 'consultants_id'); 
     }
 }

@@ -131,11 +131,10 @@
                        @if (!$course->users->contains(CRUDBooster::myId()) && $course->price > 0)
     
                     
- <form method="post" action="{{  route('enrollment.store') }}">
+ <form method="post" action="{{  route('myfatoorah.initial' , $course->id) }}">
                        @csrf
-                       <input type="hidden" name="cms_users_id" value="{{ CRUDBooster::myId() }}"/> 
-                        <input type="hidden" name="courses_id" value="{{ $course->id }}"/> 
-
+                 
+                        <input type="hidden" name="service" value="Lms"/>
                        <button type="submit" class="btn_1 d-block">السداد  </button>
                        </form>
                        @endif

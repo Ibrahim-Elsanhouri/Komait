@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contract; 
+use App\Course; 
 use App\Invoice; 
 use CRUDBooster; 
 use Auth; 
-use Carbon\Carbon;
 use App\Notifications\Message; 
 
 class MyfatoorahController extends Controller
@@ -20,7 +20,7 @@ public $token= "Tfwjij9tbcHVD95LUQfsOtbfcEEkw1hkDGvUbWPs9CscSxZOttanv3olA6U6f84t
    //https://apitest.myfatoorah.com/v2/InitiatePaymen
 
 
-
+/*
 public function initial_payment($id){
   $contract = Contract::find($id);
 $InvoiceAmount = ($contract->offer->cost + $contract->offer->cost * 0.15) / 2;
@@ -53,12 +53,68 @@ if ($err) {
 return view('myfatoora.execute' , compact('contract'));
 }
 }
+*/
+ public function initial_payment(Request $request, $id){
+
+$service = sprintf("App\\Payment\\%sPaymentService" , ucfirst($request->service)); 
+//dd($request->service); 
+//if (is_a($service , PaymentServiceInterface::class . true)){
+  $service = new $service; 
+
+
+  $service->initial_payment($id); 
+  if ($request->service == "Consultant"){
+
+    $contract = Contract::find($id);
+  //  dd($contract);
+    return view('myfatoora.execute' , compact('contract'));
+
+  }else{
+    $course = Course::find($id);
+
+    return view('myfatooralms.execute' , compact('course'));
+  }
 
 
 
 
-public function execute_payment($id){
 
+ }
+
+
+
+
+
+public function execute_payment(Request $request , $id){
+
+
+  if ($request->service == "Consultant"){
+
+    $service = sprintf("App\\Payment\\%sPaymentService" , ucfirst($request->service)); 
+    //dd($request->service); 
+    //if (is_a($service , PaymentServiceInterface::class . true)){
+      $service = new $service; 
+    // dd($service);
+    
+    
+      $service->execute_payment($id); 
+    $contract = Contract::find($id);
+
+   $invoice = $contract->invoices()->latest()->first(); 
+   $payment_url = $invoice->payment_url;
+   $InvoiceId = $invoice->InvoiceId;
+
+  //  dd($contract);
+    return view('myfatoora.payment' , compact('contract' , 'payment_url','InvoiceId' , 'invoice')); 
+
+  }else{
+    $course = Course::find($id);
+
+    return view('myfatooralms.payment' , compact('course' , 'payment_url','InvoiceId' , 'invoice')); 
+
+  }
+}
+/*
   $contract = Contract::find($id);
   $name = CRUDBooster::myName();
   $mobile = CRUDBooster::myMobile();
@@ -108,7 +164,61 @@ return view('myfatoora.payment' , compact('contract' , 'payment_url','InvoiceId'
 }
 }
 
+
+
+*/
+
+
+
+
+
+
+
    public function direct_payment(Request $request){
+
+    $service = sprintf("App\\Payment\\%sPaymentService" , ucfirst($request->service)); 
+    //dd($request->service); 
+    //if (is_a($service , PaymentServiceInterface::class . true)){
+      $service = new $service; 
+    // dd($service);
+    
+    
+      $service->direct_payment($request); 
+
+    if ($request->service == "Consultant"){
+
+      $contract = Contract::find($id);
+  
+
+  
+    //  dd($contract);
+    return redirect('/myconsultants')->with('success' , 'تم استقبال الحوالة و تفعيل العقد بنجاح');
+  
+    }else{
+      $course = Course::find($id);
+  
+      return redirect('/myconsultants')->with('success' , 'تم استقبال course و تفعيل العقد بنجاح');
+  
+    }
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
  //$contract = Contract::find($id);
  $name = CRUDBooster::myName();
  $mobile = CRUDBooster::myMobile();
@@ -157,9 +267,11 @@ $consultant->halas_id = 5;
 $consultant->save();
 
 $this->admin_new_payment(); 
-
-     return redirect('/myconsultants')->with('success' , 'تم استقبال الحوالة و تفعيل العقد بنجاح');
+*/
     }
    }
 
-}
+
+
+
+

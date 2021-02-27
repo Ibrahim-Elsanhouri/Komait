@@ -3,6 +3,7 @@
 
 namespace App\Payment; 
 
+use Illuminate\Http\Request;
 
 interface PaymentServiceInterface{
 
@@ -12,6 +13,6 @@ interface PaymentServiceInterface{
     
     public function initial_payment($id);
     public function execute_payment($id); 
-    public function direct_payment(array $data);
+    public function direct_payment($request);
 
 }

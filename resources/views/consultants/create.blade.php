@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="css/slick.css">
     <!-- style CSS -->
 	<link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -160,11 +162,44 @@
 									</select>
 								</div>
 							</div>
+
+<div name="here" class="mt-10">
+                            
+                        </div>
+                            
+
+
+
+
+
+
+
+
+
+							<div class="input-group-icon mt-10">
+								<div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
+
+                                <div class="form-select" id="default-select" >
+                                    <select id="city" name="city">
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
 								<div class="input-group-icon mt-10">
 								<div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
 								<div class="form-select" id="default-select">
 											<select name="study">
-                                                			<option value="" >هل يوجد دراسة جدوى <i class="fa fa-plane" aria-hidden="true"></i></option>
+                                                			<option value="">هل يوجد دراسة جدوى <i class="fa fa-plane" aria-hidden="true"></i></option>
 
 									<option value="1">نعم</option>
 									
@@ -324,6 +359,44 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/waypoints.min.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('select[name="types_id"]').on('change', function() {
+           // console.log('you click on the type');
+            var types_id = $(this).val();
+            if(types_id) {
+                $.ajax({
+                    url: '/get_type_keys/'+types_id,
+                    type: "GET",
+                    dataType: "json",
+                    success:function(data) {    
+                        console.log(data);                     
+                        $('div[name="here"]').empty();
+                        $.each(data, function(key, value) {     
+
+
+    //    $('select[name="city"]').append('<option value="'+ key +'">'+ value +'</option>');
+
+   // <input type="text" name="subject" placeholder="عنوان الاستشارة" 
+	//							 required class="single-input">
+
+    $('div[name="here"]')
+    //.append(
+     //   '<h1>'+value+ ' ,  ' + key +'</h1>').append('<h2>'+value+ ' ,  ' + key +'</h2>')
+     .append('<div class="text-right"><h5>'+value+'</h5></div>')
+     .append('<input type="text" name="value[]" required class="single-input">')
+     .append('<input type="hidden" name="keys_id[]" value='+key+'>')
+
+                        });
+                    }
+                });
+            }else{
+                $('div[name="here"]').empty();
+            }
+        });
+    });
+</script>
 </body>
 
 </html>

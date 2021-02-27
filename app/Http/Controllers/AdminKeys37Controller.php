@@ -5,12 +5,12 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminConsultantsController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminKeys37Controller extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
 			# START CONFIGURATION DO NOT REMOVE THIS LINE
-			$this->title_field = "id";
+			$this->title_field = "name";
 			$this->limit = "20";
 			$this->orderby = "id,desc";
 			$this->global_privilege = false;
@@ -18,47 +18,33 @@
 			$this->button_bulk_action = true;
 			$this->button_action_style = "button_icon";
 			$this->button_add = false;
-			$this->button_edit = true;
-			$this->button_delete = true;
-			$this->button_detail = true;
+			$this->button_edit = false;
+			$this->button_delete = false;
+			$this->button_detail = false;
 			$this->button_show = true;
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "consultants";
+			$this->table = "entries";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"الاستشارة","name"=>"subject"];
-			$this->col[] = ["label"=>"العميل","name"=>"cms_users_id","join"=>"cms_users,name"];
-			$this->col[] = ["label"=>"نوع الاستشارة","name"=>"types_id","join"=>"types,name"];
-			$this->col[] = ["label"=>"الحالة","name"=>"halas_id","join"=>"halas,name"];
-
+			$this->col[] = ["label"=>"السؤال","name"=>"keys_id","join"=>"keys,name"];
+			$this->col[] = ["label"=>"الجواب","name"=>"value"];
+			$this->col[] = ["label"=>"الاستشارة","name"=>"consultants_id","join"=>"consultants,subject"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'الاستشارة','name'=>'subject','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'تفاصيل الاستشارة','name'=>'details','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'ملف الاستشارة','name'=>'file','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'نوع الاستشارة','name'=>'types_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'types,name'];
-			$this->form[] = ['label'=>'هل يوجد ترخيص تجاري','name'=>'licences','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'هل يوجد دراسة جدوى','name'=>'study','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'هل يوجد مستندات','name'=>'docs','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'المستشار','name'=>'consultanters_id','type'=>'select2','validation'=>'required','width'=>'col-sm-9','datatable'=>'cms_users,name'];
+			$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'فضلا ادخل احرف فقط'];
+			$this->form[] = ['label'=>'Types Id','name'=>'types_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'types,name'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'الاستشارة','name'=>'subject','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'تفاصيل الاستشارة','name'=>'details','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'ملف الاستشارة','name'=>'file','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'نوع الاستشارة','name'=>'types_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'types,name'];
-			//$this->form[] = ['label'=>'هل يوجد ترخيص تجاري','name'=>'licences','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'هل يوجد دراسة جدوى','name'=>'study','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'هل يوجد مستندات','name'=>'docs','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'المستشار','name'=>'consultanters_id','type'=>'select2','validation'=>'required','width'=>'col-sm-9','datatable'=>'cms_users,name'];
+			//$this->form[] = ["label"=>"Name","name"=>"name","type"=>"text","required"=>TRUE,"validation"=>"required|string|min:3|max:70","placeholder"=>"فضلا ادخل احرف فقط"];
+			//$this->form[] = ["label"=>"Types Id","name"=>"types_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"types,name"];
 			# OLD END FORM
 
 			/* 
@@ -74,30 +60,6 @@
 	        | 
 	        */
 	        $this->sub_module = array();
-
-			$this->sub_module[] = ['label'=>'الملاحظات'
-			,'path'=>'notes',
-			'parent_columns'=>'subject',
-			'foreign_key'=>'consultants_id',
-			'button_color'=>'success',
-			'button_icon'=>'fa fa-money'];
-			$this->sub_module[] = ['label'=>'العروض',
-			'path'=>'offers',
-			'parent_columns'=>'subject'
-			,'foreign_key'=>'consultants_id'
-			,'button_color'=>'primary','button_icon'=>'fa fa-envelope'];
-			$this->sub_module[] = ['label'=>'اتفاقيات العمل',
-			'path'=>'contracts',
-			'parent_columns'=>'subject',
-			'foreign_key'=>'consultants_id',
-			'button_color'=>'danger',
-			'button_icon'=>'fa fa-credit-card-alt'];
-
-			$this->sub_module[] = 
-			['label'=>'المعايير','path'=>'entries',
-			'parent_columns'=>'subject',
-			'foreign_key'=>'consultants_id','button_color'=>'info',
-			'button_icon'=>'fa fa-heart'];
 
 
 	        /* 

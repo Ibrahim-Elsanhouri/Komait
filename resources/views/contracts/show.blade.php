@@ -161,17 +161,19 @@
              &nbsp;&nbsp;&nbsp;
              
              @if($contract->confirmed == 0)
-             <form action="{{ route('myfatoorah.initial' , $contract->id) }}" method="post">
+             <form action="{{ route('myfatoorah.initial' ,  $contract->id) }}" method="post">
              @csrf    
+             <input type="hidden" name="service" value="Consultant"/>
              <button type="submit" class="btn btn-success btn-lg">
              السداد للتفعيل</button>
              </form> 
 @endif
 
 
-             @if($contract->confirmed == 1 && $contract->offer->consultant->halas_id = 6 && $contract->invoices->where('paid' , 1 )->sum('amount') != ($contract->offer->cost + $contract->offer->cost * 0.15) )
-             <form action="{{ route('myfatoorah.initial' , $contract->id) }}" method="post">
+             @if($contract->confirmed == 1 && $contract->offer->consultant->halas_id = 6 && $contract->invoices->where('paid' , 1 )->sum('amount') < ($contract->offer->cost + $contract->offer->cost * 0.15) )
+             <form action="{{ route('myfatoorah.initial' , $contract->id ) }}" method="post">
              @csrf    
+             <input type="hidden" name="service" value="Consultant"/>
              <button type="submit" class="btn btn-primary btn-lg">
              سداد المبلغ المتبقي
               </button>

@@ -26,7 +26,7 @@
                 <h1>Amount : {{ $invoice->amount }} SAR</h1>
             </div>
             <div class="payment">
-                <form method="post" action="{{ route('myfatoorah.direct' , $id) }}">
+                <form method="post" action="{{ route('myfatoorah.direct') }}">
                 @csrf
                     <div class="form-group owner">
                         <label for="owner">Owner</label>
@@ -70,7 +70,10 @@
                         <img src="{{ asset('payment/images/visa.jpg') }}" id="visa">
                         <img src="{{ asset('payment/images/mastercard.jpg') }}" id="mastercard">
                         <img src="{{ asset('payment/images/amex.jpg') }}" id="amex">
-                    </div>
+                    </div> 
+                    <input type="hidden" name="service" value="Consultant"/>
+
+
                     <input type="hidden" name="contracts_id" value="{{ $contract->id }}"/>
                     <input type="hidden" name="payment_url" value="{{ $payment_url }}"/>
                     <input type="hidden" name="invoices_id" value="{{ $invoice->id }}"/>
