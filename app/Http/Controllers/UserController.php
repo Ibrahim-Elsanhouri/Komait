@@ -7,7 +7,9 @@ use App\Mail\VerificationMail;
 use App\User; 
 use App\UserVerify; 
 use App\Enrollment;
+use App\Events\Registeration;
 use CRUDBooster;
+use App\Jobs\RegisterationJob;
 
 class UserController extends Controller
 
@@ -26,24 +28,29 @@ public function getRegister(){
             'password' => 'required|min:6',
 
         ]);
+        // register the user
         $user = new User();
         $user->name = $request->input('name'); 
         $user->email = $request->input('email'); 
         $user->password =  bcrypt($request->input('password')); 
-
-      //  $user->id_cms_privileges = $request->input('id_cms_privileges'); 
-
         $user->mobile = $request->input('mobile'); 
         $user->id_cms_privileges = 4; 
         $user->save(); 
-    //    $hhh = $user->mobile;
-        
+
+
+      //  event(new Registeration($user));
+       RegisterationJob::dispatch($user);
+
+ // initialize token and verfication
+     /*   
         $verifyUser = new UserVerify(); 
         $verifyUser->cms_users_id = $user->id; 
         $verifyUser->token = str_random(50);
         $verifyUser->save(); 
-   
-\Mail::to($user->email)->send(new \App\Mail\VerificationMail($user));
+*/
+        
+    // send Email
+//\Mail::to($user->email)->send(new \App\Mail\VerificationMail($user));
 
 
     

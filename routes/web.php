@@ -98,10 +98,6 @@ Route::post('/initial_payment/{id}' , 'MyfatoorahController@initial_payment')->n
 Route::post('/execute_payment/{id}' , 'MyfatoorahController@execute_payment')->name('myfatoorah.execute');
 Route::post('/DirectPayment' , 'MyfatoorahController@direct_payment')->name('myfatoorah.direct');
 
-// Payment LMS
-//Route::post('/initial_payment/{id}' , 'MyfatoorahlmsController@initial_payment')->name('myfatoorah.initial');
-//Route::post('/execute_payment/{id}' , 'MyfatoorahlmsController@execute_payment')->name('myfatoorah.execute');
-//Route::post('/DirectPayment' , 'MyfatoorahlmsController@direct_payment')->name('myfatoorah.direct');
 
 
 

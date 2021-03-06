@@ -29,6 +29,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -37,8 +38,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
     public function courses(){
-        return $this->belongsToMany('App\Course', 'enrollments', 'cms_users_id', 'courses_id');
+        return $this->belongsToMany(Course::class, 'enrollments', 'cms_users_id', 'courses_id');
     }
 
     public function verifyUser(){

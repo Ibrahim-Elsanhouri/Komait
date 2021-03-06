@@ -100,9 +100,13 @@ return view('myfatoora.payment' , compact('contract' , 'payment_url','InvoiceId'
 
 }
 }
+
+
+
 public function direct_payment($request){
-    //$contract = Contract::find($id);
-    $name = CRUDBooster::myName();
+
+
+  $name = CRUDBooster::myName();
     $mobile = CRUDBooster::myMobile();
     $email = CRUDBooster::myEmail();
    
@@ -111,7 +115,8 @@ public function direct_payment($request){
     $expiryYear = $request->expiryYear; 
     $securityCode = $request->securityCode; 
     $payment_url = $request->payment_url; 
-       
+      
+    
            # after getting the payment url call it as a post API and pass card info to it
            # if you saved the card info before you can pass the token for the api
            
@@ -137,11 +142,15 @@ public function direct_payment($request){
          $invoice = Invoice::find($request->invoices_id); 
          $invoice->paid = 1; 
          $invoice->save(); 
+
+         
          // change the Contract status to confirm
          $contract = Contract::find($request->contracts_id); 
          $contract->confirmed = 1; 
          $contract->confirmed_at = Carbon::now()->toDateTimeString();
          $contract->save(); 
+
+
    // change consultant hals 
    
    $consultant =  $contract->offer->consultant; 

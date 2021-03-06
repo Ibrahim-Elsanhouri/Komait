@@ -11,7 +11,7 @@ class MyfatoorahlmsController extends Controller
     
     public $basURL = "https://apitest.myfatoorah.com";
 
-
+ 
     public function initial_payment($id){
         $course = Contract::find($id);
       //$InvoiceAmount = ($contract->offer->cost + $contract->offer->cost * 0.15) / 2;

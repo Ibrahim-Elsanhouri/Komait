@@ -77,8 +77,9 @@
  <form action="{{ route('myfatoorah.execute' , $course->id) }}"  method="post">
 
  @csrf
- <input  type="hidden" name="courses_id" value="{{ $course->id}}"/>
- <input  type="hidden" name="courses_id" value="{{ $course->price}}"/>
+ <input type="hidden" name="service" value="Lms"/>
+ <input type="hidden" name="price" value="{{ $course->price }}"/>
+
 
  <button type="submit" class="btn btn-primary">الدفع الان</button>
  </form>
